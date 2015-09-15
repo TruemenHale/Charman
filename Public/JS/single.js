@@ -3,6 +3,7 @@
  */
 $(function(){
 	$('.backRow').on('tap',function(){
-		$.mobile.changePage(_url);
+		//写死了url;
+		$.mobile.changePage("http://localhost/charman/index.php/Home/Index/index.html");
 	});
 });
