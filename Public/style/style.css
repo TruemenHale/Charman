@@ -26,6 +26,7 @@
   -o-background-size: 100% 100%;
   -ms-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
+  overflow: hidden;
   height: 100%;
   width: auto;
   position: relative;
@@ -55,16 +56,17 @@
   padding: 15px 0;
   text-align: center;
   text-shadow: none;
+  font-size: 13px;
 }
 #index .schoolSelector li:hover {
   background: #3185f6;
 }
 #index .schoolSelector .selector_title {
   padding: 16px 0;
-  font-size: 24px;
+  font-size: 18px;
   width: 100%;
   display: inline-block;
-  font-weight: 800;
+  font-weight: 600;
   text-align: center;
 }
 #index .spaceKeeper {
@@ -94,6 +96,8 @@
 #index .charmanLogin a {
   text-decoration: none;
   color: #fbfa9f;
+  font-weight: 200;
+  font-size: 14px;
   text-shadow: 0 0 1px #f6ad56;
 }
 #index .copyright {
@@ -112,6 +116,10 @@
   width: auto;
   text-align: center;
   border: none;
+}
+#login #header h5 {
+  font-size: 14px;
+  font-weight: 500;
 }
 #login .login_title {
   width: auto;
@@ -147,7 +155,7 @@
 }
 .backRow {
   line-height: 11px;
-  top: 20px;
+  top: 14px;
   left: 8px;
   text-decoration: none;
   border: 0;
@@ -164,9 +172,81 @@
   background: #0083a9;
   color: #ffffff;
   text-shadow: 0 0 1px #44a4c0;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   width: auto;
   text-align: center;
   border: none;
+}
+#single .uPhoto {
+  width: 100%;
+  height: 180px;
+  background: url("../images/slogan.jpg") no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  box-shadow: 0 0 0 3px #fff;
+}
+#single .uTitle {
+  color: #333333;
+  text-shadow: 1px 1px 1px #4a9fb7;
+  overflow: hidden;
+  margin: 10px 0;
+}
+#single .uTitle .Tname {
+  font-weight: 500;
+  float: left;
+}
+#single .uTitle .pray {
+  font-size: 12px;
+  float: right;
+}
+#single .intro {
+  padding: 15px;
+  background: #a9e3f3;
+  font-size: 12px;
+  color: #333333;
+  text-shadow: 1px 1px 1px #96c8d6;
+  line-height: 20px;
+  font-weight: 300;
+}
+#single .wordsBoard {
+  width: 100%;
+  height: 500px;
+  margin-top: 18px;
+  position: relative;
+}
+#single .wordsBoard .bigCircle {
+  background: #ffb850;
+  width: 120%;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+}
+#single .wordsBoard .smallCircle {
+  background: #f4973c;
+  width: 180%;
+  height: 400px;
+  position: absolute;
+  border-radius: 50%;
+}
+#single .wordsBoard .wordsHolder {
+  position: absolute;
+  width: 100%;
+  top: 15px;
+}
+#single .wordsBoard .wordsHolder h5 {
+  color: #613d1d;
+  text-align: center;
+  font-size: 13px;
+}
+#single .wordsBoard .wordsHolder .wordsInput {
+  display: block;
+  width: 90%;
+  border-radius: 0;
+  border: none;
+  margin: 15px auto;
+  overflow: scroll;
 }

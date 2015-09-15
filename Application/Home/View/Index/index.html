@@ -15,11 +15,6 @@
 </head>
 <body>
 	<div data-role="page" id="index">
-		<script>
-			$("#index").on("pagecreate",function(){
-
-			});
-		</script>
 		<div class="mask"></div>
 		<div class="spaceKeeper"></div>
 		<div class="selectorBtn">
@@ -66,9 +61,6 @@
 				重庆科技学院
 			</li>
 		</ul>
-		<div class="drection">
-			选择你所在的学校，点击进入即可勾搭学生会的主席们哟！
-		</div>
 		<div class="charmanLogin">
 			<a href="#login" data-transition="flow">主席登陆</a>
 		</div>
@@ -78,10 +70,10 @@
 	</div>
 	<div data-role="page" id="login">
 		<div data-role="header" data-position="fixed" id="header">
-			<a href="#index" data-transition="turn" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 20px">
+			<a href="#index" data-transition="turn" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
 				&#xe63c;
 			</a>
-			<h1>主席登陆</h1>
+			<h5>主席登陆</h5>
 		</div>
 		<div class="login_title">
 
@@ -104,10 +96,34 @@
 	</div>
 	<div data-role="page" id="single">
 		<div data-role="header" data-position="fixed" id="singleHeader">
-			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 20px">
+			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
 				&#xe63c;
 			</a>
 			<h1 class="uName"></h1>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="uPhoto">
+			</div>
+			<p class="uTitle">
+				<span class="Tname">
+					西南大学主席团
+				</span>
+				<span class="pray">
+					<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>
+					赏赞 1000
+				</span>
+			</p>
+			<div class="intro">
+				&nbsp;&nbsp;&nbsp;西南大学学生会是在校党委领导，校团委的指导下的学生组织，是联系学生和学校的重要纽带。这里有一批经过严格筛选的品学兼优、工作能力较强、作风优良的学生干部。他们本着"服务同学、锻炼自我"的宗旨，有机地组成学校的整体，为繁荣师生文化、丰富学生生活、促进校园建设做出自己的努力，并卓有成效的做了大量工作，成为校园工作、生活的中坚力量。我校学生会主动适应形势要求、时刻把握时代脉搏，在实践中研究新问题、探索新思路、拓展新途径，提高...
+			</div>
+		</div>
+		<div class="wordsBoard">
+			<div class="bigCircle"></div>
+			<div class="smallCircle"></div>
+			<div class="wordsHolder">
+				<h5>留言板</h5>
+				<textarea name="" id="" style="height:300px;" class="wordsInput"></textarea>
+			</div>
 		</div>
 	</div>
 </body>

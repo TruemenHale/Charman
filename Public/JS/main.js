@@ -5,6 +5,8 @@ $(function(){
 	var oMask = $('.mask');
 	var oSelector = $('.schoolSelector');
 	var aSeBox = $('.schoolSelector li');
+	var oBigC = $('.bigCircle');
+	var oSmallC = $('.smallCircle');
 	$(".selectorBtn").on('click',function(){
 		oMask.css('z-index',999);
 		oSelector.css('z-index',1000);
@@ -18,9 +20,15 @@ $(function(){
 	});
 	aSeBox.on('tap',function(){
 		var uName = $(this).html();
-		$.mobile.changePage('#single',{
-			transition:"flow"
+		oSelector.animate({"top":"100%"},function(){
+			oMask.css('z-index',-999);
+			oSelector.css('z-index',-1000);
+			$.mobile.changePage('#single',{
+				transition:"flow"
+			});
+			$('.uName').html(uName);
 		});
-		$('.uName').html(uName);
-	})
+	});
+	oBigC.css({"left":-$(window).width()*0.1});
+	oSmallC.css({"left":-$(window).width()*0.4});
 });
