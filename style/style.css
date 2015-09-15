@@ -54,6 +54,10 @@
   width: 100%;
   padding: 15px 0;
   text-align: center;
+  text-shadow: none;
+}
+#index .schoolSelector li:hover {
+  background: #3185f6;
 }
 #index .schoolSelector .selector_title {
   padding: 16px 0;
@@ -77,7 +81,7 @@
   width: 70%;
   color: #ffffff;
   text-shadow: none;
-  font-size: 10px;
+  font-size: 8px;
   text-align: center;
   margin: 5px auto;
 }
@@ -152,4 +156,17 @@
   background-color: transparent;
   width: 22px;
   height: 22px;
+}
+#single {
+  background: #52c6e7;
+}
+#single #singleHeader {
+  background: #0083a9;
+  color: #ffffff;
+  text-shadow: 0 0 1px #44a4c0;
+  font-size: 18px;
+  font-weight: 400;
+  width: auto;
+  text-align: center;
+  border: none;
 }
