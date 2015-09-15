@@ -14,6 +14,11 @@
 </head>
 <body>
 	<div data-role="page" id="index">
+		<script>
+			$("#index").on("pagecreate",function(){
+
+			});
+		</script>
 		<div class="mask"></div>
 		<div class="spaceKeeper"></div>
 		<div class="selectorBtn">
@@ -96,6 +101,13 @@
 			登陆
 		</div>
 	</div>
-
+	<div data-role="page" id="single">
+		<div data-role="header" data-position="fixed" id="singleHeader">
+			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 20px">
+				&#xe63c;
+			</a>
+			<h1 class="uName"></h1>
+		</div>
+	</div>
 </body>
 </html>
