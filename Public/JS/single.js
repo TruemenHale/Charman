@@ -3,6 +3,6 @@
  */
 $(function(){
 	$('.backRow').on('tap',function(){
-		$.mobile.changePage('http://localhost:63342/Charman/index.html');
+		$.mobile.changePage(_url);
 	});
 });
