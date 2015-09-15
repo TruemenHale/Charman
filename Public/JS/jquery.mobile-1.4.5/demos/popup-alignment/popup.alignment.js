@@ -4,7 +4,7 @@
 // size of the rectangle representing the origin into popup's "open" method, or
 // maybe the origin itself, instead of merely the midpoint of it. Here, the
 // origin (link) is saved in lastLink, and appended to the options in the
-// overridden version of open. Thankfully, JS is not multithreaded. Hooray!
+// overridden version of open. Thankfully, js is not multithreaded. Hooray!
 var lastLink,
 	origHandleLink = $.mobile.popup.handleLink,
 	handleLink = function( link ) {

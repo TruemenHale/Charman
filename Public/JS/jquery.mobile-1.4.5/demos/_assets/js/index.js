@@ -637,7 +637,7 @@ $.fn.viewSourceCode = function() {
 
 		if ( self.is( "[data-demo-js]" ) ) {
 			data = getSnippet( "script", self.attr( "data-demo-js" ), snippetSource );
-			sources.push( { title: "JS", theme: "e", brush: "js", data: fixData( data ) } );
+			sources.push( { title: "js", theme: "e", brush: "js", data: fixData( data ) } );
 		}
 
 		if ( self.is( "[data-demo-css]" ) ) {

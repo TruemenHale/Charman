@@ -1935,7 +1935,7 @@ $.mobile.widget = $.Widget;
 
 (function( $, undefined ) {
 
-	/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
+	/*! matchMedia() polyfill - Test a CSS media type/query in js. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
 	window.matchMedia = window.matchMedia || (function( doc, undefined ) {
 
 		var bool,
@@ -15314,7 +15314,7 @@ $.widget( "ui.tabs", {
 	// Add mobile, initial load "rendering" classes to docEl
 	$html.addClass( "ui-mobile ui-mobile-rendering" );
 
-	// This is a fallback. If anything goes wrong (JS errors, etc), or events don't fire,
+	// This is a fallback. If anything goes wrong (js errors, etc), or events don't fire,
 	// this ensures the rendering class is removed after 5 seconds, so content is visible and accessible
 	setTimeout( hideRenderingClass, 5000 );
 
