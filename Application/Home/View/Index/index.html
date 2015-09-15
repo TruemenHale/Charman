@@ -10,6 +10,7 @@
 	<script src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
 	<script src="__PUBLIC__/js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="__PUBLIC__/js/main.js"></script>
+	<script src="__PUBLIC__/js/login.js"></script>
 	<link rel="stylesheet" href="__PUBLIC__/style/style.css"/>
 </head>
 <body>
@@ -87,14 +88,14 @@
 		</div>
 		<ul data-inset="true" data-role="listview" class="usr_input">
 			<li>
-				<i class="iconfont" style="font-size: 19px;margin-left: 3px;display: inline-block">&#xe625;</i>
+				<i class="iconfont" style="font-size: 16px;margin-left: 3px;display: inline-block">&#xe625;</i>
 				账号
-				<input type="text" placeholder="请输入您的账号" data-role="none"/>
+				<input type="text" id="usrName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的账号" data-role="none"/>
 			</li>
 			<li>
-				<i class="iconfont" style="font-size: 23px;">&#xe61b;</i>
+				<i class="iconfont" style="font-size: 20px;">&#xe61b;</i>
 				密码
-				<input type="password" placeholder="请输入您的密码" data-role="none"/>
+				<input type="password" id="password" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的密码" data-role="none"/>
 			</li>
 		</ul>
 		<div id="loginBtn" data-role="none">
