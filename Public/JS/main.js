@@ -23,10 +23,10 @@ $(function(){
 		oSelector.animate({"top":"100%"},function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
-			$.mobile.changePage('#single',{
-				transition:"flow"
+			$.mobile.loading('show');
+			ajax(uName,function(){
+				$('.uName').html(uName);
 			});
-			$('.uName').html(uName);
 		});
 	});
 	oBigC.css({"left":-$(window).width()*0.1});

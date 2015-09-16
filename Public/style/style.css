@@ -181,7 +181,6 @@
 #single .uPhoto {
   width: 100%;
   height: 180px;
-  background: url("../images/slogan.jpg") no-repeat;
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
   -o-background-size: 100% 100%;
@@ -202,6 +201,7 @@
 #single .uTitle .pray {
   font-size: 12px;
   float: right;
+  line-height: 15px;
 }
 #single .intro {
   padding: 15px;
@@ -211,6 +211,13 @@
   text-shadow: 1px 1px 1px #96c8d6;
   line-height: 20px;
   font-weight: 300;
+}
+#single .intro .forMore {
+  font-size: 14px;
+  float: right;
+  color: #ffffff;
+  margin-left: 5px;
+  text-decoration: underline;
 }
 #single .wordsBoard {
   width: 100%;
@@ -264,4 +271,66 @@
   text-align: center;
   background: #a35d3b;
   margin-right: 6%;
+}
+#single .wordsBoard .wordsList {
+  position: absolute;
+  width: 100%;
+  background: #f4973c;
+  height: auto;
+  min-height: 400px;
+  top: 225px;
+}
+#single .wordsBoard .wordsList .perSchool {
+  display: inline-block;
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 12px;
+  color: #ffffff;
+}
+#single .wordsBoard .wordsList ul {
+  display: block;
+  margin: 5px auto;
+  width: 92%;
+  border-radius: 0;
+}
+#single .wordsBoard .wordsList ul li {
+  color: #999999;
+}
+#single .wordsBoard .wordsList ul li .touxiang {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ff0000;
+  float: left;
+  overflow: hidden;
+}
+#single .wordsBoard .wordsList ul li .usrName {
+  color: #363636;
+}
+#single .wordsBoard .wordsList ul li .usrBack {
+  width: 75%;
+  float: left;
+  margin-left: 15px;
+  word-wrap: break-word;
+}
+#single .wordsBoard .wordsList ul li .words {
+  width: 100%;
+  white-space: normal;
+  font-size: 13px;
+}
+#single .wordsBoard .wordsList ul li .reply {
+  width: 100%;
+  font-size: 11px;
+}
+#single .wordsBoard .wordsList ul .loadMore {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  font-size: 11px;
+  background: #ffffff;
+  line-height: 40px;
+  text-align: center;
+  color: #666;
 }
