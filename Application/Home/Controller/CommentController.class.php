@@ -6,15 +6,17 @@ class CommentController extends Controller {
     //获取评论
     public function getComment() {
         $input = I('post.');
-        if(!is_numeric($input['school_id']) || !is_numeric($input['page'])) {
+        if(!is_numeric($input['school_id']) ) {
             $this->ajaxReturn([
                 'status' => 403,
                 'info'   => '参数错误!'
             ]);
         }
+        $page = $input['page']>0?$input['page']:1;
         $data = M('comment')->where(['father_id' => 0, 'school_id' => $input['school_id'], 'status' => 1])
-                            ->page($input['page'], 15)
+                            ->page($page, 4)
                             ->join('join users on comment.user_id = users.id')
+                            ->order('comment.time desc')
                             ->field('user_id as uid, users.nickname, users.avatar, comment.id as comment_id, comment.content, time, father_id')
                             ->select();
         foreach ($data as &$v) {
