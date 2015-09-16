@@ -4,9 +4,34 @@ use Think\Controller;
 class CommentController extends Controller {
 
     //获取评论
+    public function getComment() {
+        $input = I('post.');
+        if(!is_numeric($input['school_id']) || !is_numeric($input['page'])) {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '参数错误!'
+            ]);
+        }
+        $data = M('comment')->where(['father_id' => 0, 'school_id' => $input['school_id'], 'status' => 1])
+                            ->page($input['page'], 15)
+                            ->join('join users on comment.user_id = users.id')
+                            ->field('user_id as uid, users.nickname, users.avatar, comment.id as comment_id, comment.content, time, father_id')
+                            ->select();
+        foreach ($data as &$v) {
+            $v['reply'] = M('comment')->where(['father_id' => $v['comment_id'], 'school_id' => $input['school_id'], 'status' => 1])
+                                        ->join('join users on comment.user_id = users.id')
+                                        ->field('user_id as uid, users.nickname, users.avatar, comment.content, time, father_id')
+                                        ->select();
+        }
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功',
+            'data'   => $data
+        ]);
+    }
 
     //发表评论
-    public function comment(){
+    public function comment() {
         $input = I('post.');
         if(mb_strlen($input['content'], 'utf8') > 300) {
             $this->ajaxReturn([
@@ -29,7 +54,7 @@ class CommentController extends Controller {
     }
 
     //检查数据
-    private function checkContent($input){
+    private function checkContent($input) {
         if(!is_numeric($input['father_id'])) {
             return false;
         }
