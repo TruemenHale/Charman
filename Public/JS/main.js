@@ -27,6 +27,7 @@ $(function(){
 			var _data = {};
 			_data.page = 1;
 			_data.school_id = $(this).attr('data-school');
+			console.log($(this).attr('data-school'));
 			$.post(school_path,_data,function(data){
 				console.log(data);
 			})
