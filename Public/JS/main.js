@@ -24,9 +24,13 @@ $(function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
 			$.mobile.loading('show');
-			ajax(uName,function(){
-				$('.uName').html(uName);
-			});
+			var _data = {};
+			_data.page = 1;
+			_data.school_id = 1;
+			_data = JSON.stringify(_data);
+			$.POST('',_data,function(data){
+				console.log(data);
+			})
 		});
 	});
 	oBigC.css({"left":-$(window).width()*0.1});
