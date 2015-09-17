@@ -11,7 +11,7 @@ $(function(){
 		$.post('url',_usr,function(data){
 			if(data.status == 200){
 				$.mobile.loading('hide');
-				$.mobile.changePage();//单独页面还没写完
+				$.mobile.changePage();
 			}
 			else if(data.status == 403){
 				alert('用户名或密码错误！');

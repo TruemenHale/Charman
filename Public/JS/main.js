@@ -1,6 +1,18 @@
 /**
  * Created by truemenhale on 15/9/15.
  */
+$(document).on("pageinit",function(){
+	$.mobile.loading('show');
+	var img = new Image();
+	img.src = "../Charman/public/images/index_back.jpg";
+	img.onload = function(){
+		img.onload = null;
+		$('#index').css('background-image',"url('../Charman/public/images/index_back.jpg')");
+		$.mobile.loading('hide');
+		$.mobile.changePage('#index');
+	};
+
+});
 $(function(){
 	var oMask = $('.mask');
 	var oSelector = $('.schoolSelector');
@@ -29,7 +41,7 @@ $(function(){
 			oSelector.css('z-index',-1000);
 			$.mobile.loading('show');
 			$.post(school_path,_data,function(data){
-				console.log(data);
+				ajaxView(data);
 			});
 		});
 	});
