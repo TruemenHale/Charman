@@ -68,7 +68,7 @@ class CommentController extends Controller {
             'content'   => $input['content'],
             'user_id'   => session('uid'),
             'school_id' => session('school_id'),
-            'time'      => date('Y-m-d H:i:s', time())
+            'time'      => date('Y-m-d', time())
         ];
         return $data;
     }

@@ -15,6 +15,24 @@ class PresidentController extends PresidentBaseController {
         ]);
     }
 
+    //获取主席团
+    public function getPresidents() {
+        $school_id = I('post.school_id');
+        if(!$school_id) {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '参数错误'
+            ]);
+        }
+        $data = M('president')->where(['school_id' => $school_id])->select();
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功',
+            'data'   => $data
+        ]);
+    }
+
+    //主席评论
     public function comment() {
         $input = I('post.');
         if($input['comment_id'] == '' || $input['content'] == '') {
@@ -27,7 +45,7 @@ class PresidentController extends PresidentBaseController {
             'content' => $input['content'],
             'user_id' => session('president_id'),
             'status'  => 1,
-            'time'    => date('Y-m-d H:i:s', time()),
+            'time'    => date('Y-m-d', time()),
             'school_id' => session('school_id'),
             'father_id' => $input['comment_id']
         ];
