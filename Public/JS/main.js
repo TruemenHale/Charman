@@ -27,7 +27,7 @@ $(function(){
 			var _data = {};
 			_data.page = 1;
 			_data.school_id = 1;
-			_data = JSON.stringify(_data);
+			//_data = JSON.stringify(_data);
 			$.post(school_path,_data,function(data){
 				console.log(data);
 			})
