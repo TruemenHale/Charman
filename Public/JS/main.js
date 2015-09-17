@@ -26,8 +26,8 @@ $(function(){
 			$.mobile.loading('show');
 			var _data = {};
 			_data.page = 1;
-			_data.school_id = 1;
-			//_data = JSON.stringify(_data);
+			_data.school_id = $(this).attr('data-school');
+			console.log($(this).attr('data-school'));
 			$.post(school_path,_data,function(data){
 				console.log(data);
 			})
