@@ -5,10 +5,11 @@ class LoginController extends Controller {
     public function login(){
         $input = I('post.');
         $map = [
-            'name' => $input['username'],
-            'password' => md5(sha1($input['password']))
+            'openid' => $input['username'],
+            'password' => md5(sha1($input['password'])),
+            'role_id'  => 2
         ];
-        $president = M('president');
+        $president = M('users');
         if($president->where($map)->count()) {
             $user = $president->where($map)->find();
             session('username', $user['username']);
