@@ -20,6 +20,7 @@ $(function(){
 	});
 	aSeBox.on('tap',function(){
 		var uName = $(this).html();
+		console.log($(this).attr('data-school'));
 		oSelector.animate({"top":"100%"},function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
@@ -27,10 +28,9 @@ $(function(){
 			var _data = {};
 			_data.page = 1;
 			_data.school_id = $(this).attr('data-school');
-			console.log($(this).attr('data-school'));
 			$.post(school_path,_data,function(data){
 				console.log(data);
-			})
+			});
 		});
 	});
 	oBigC.css({"left":-$(window).width()*0.1});
