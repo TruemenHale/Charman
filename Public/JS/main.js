@@ -19,8 +19,9 @@ $(function(){
 		});
 	});
 	aSeBox.on('tap',function(){
-		var uName = $(this).html();
-		console.log($(this).attr('data-school'));
+		var _this = $(this);
+		var uName = _this.html();
+		console.log(_this.attr('data-school'));
 		oSelector.animate({"top":"100%"},function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
