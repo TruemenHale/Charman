@@ -33,15 +33,21 @@ $(function(){
 	aSeBox.on('tap',function(){
 		var _this = $(this);
 		var uName = _this.html();
+		var school_id = _this.attr('data-school');
 		var _data = {};
 		_data.page = 1;
-		_data.school_id = _this.attr('data-school');
+		_data.school_id = school_id;
 		oSelector.animate({"top":"100%"},function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
 			$.mobile.loading('show');
 			$.post(school_path,_data,function(data){
-				ajaxView(data);
+				if(data.status == 200){
+					ajaxView(data.data,uName,school_id);
+				}
+				else{
+					alert('服务器连接失败！');
+				}
 			});
 		});
 	});
