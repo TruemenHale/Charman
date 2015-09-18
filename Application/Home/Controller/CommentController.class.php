@@ -55,6 +55,33 @@ class CommentController extends Controller {
         ]);
     }
 
+    //搜索评论
+    public function search() {
+        $input = I('post.');
+        $where = [
+            'school_id' => $input['school_id'],
+            'content'   => ['like', '%'.$input['search'].'%'],
+            'father_id' => $input['school_id'],
+            'status' => 1
+        ];
+        $data = M('comment')->where($where)
+                            ->join('join users on comment.user_id = users.id')
+                            ->order('comment.time desc')
+                            ->field('users.nickname, users.avatar, comment.id as comment_id, comment.content, time')
+                            ->select();
+        foreach ($data as &$v) {
+            $v['reply'] = M('comment')->where(['father_id' => $v['comment_id'], 'school_id' => $input['school_id'], 'status' => 1])
+                ->join('join users on comment.user_id = users.id')
+                ->field('users.nickname, users.avatar, comment.content, time')
+                ->select();
+        }
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功',
+            'data'   => $data
+        ]);
+    }
+
     //检查数据
     private function checkContent($input) {
         if(!is_numeric($input['father_id']) || !is_numeric($input['school_id'])) {
