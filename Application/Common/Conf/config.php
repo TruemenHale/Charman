@@ -1,7 +1,6 @@
 <?php
 return array(
     //'配置项'=>'配置值'
-        'URL_MODEL'=>1,
     //显示调试日志
         'SHOW_PAGE_TRACE'=>true,
     //路由对大小写不敏感
@@ -13,6 +12,7 @@ return array(
         'COOKIE_DOMAIN'         =>  '',      // Cookie有效域名
         'COOKIE_PATH'           =>  '/',     // Cookie路径
         'SESSION_OPTIONS' => array('use_only_cookies'=>0,'use_trans_sid'=>1),
+        'DEFAULT_FILTER'  => 'htmlspecialchars,trim,strip_tags',
     /*
      * 数据库配置
     */
@@ -25,5 +25,5 @@ return array(
 //    'DB_PREFIX'             =>  '',    	// 数据库表前缀
         'DB_FIELDTYPE_CHECK'    =>  false,       // 是否进行字段类型检查
         'DB_FIELDS_CACHE'       =>  false,        // 启用字段缓存
-        'DB_CHARSET'            =>  'utf8',
+        'DB_CHARSET'            =>  'utf8mb4',
 );
