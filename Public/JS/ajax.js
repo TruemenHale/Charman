@@ -1,6 +1,6 @@
 /**
  * Created by truemenhale on 15/9/15.
  */
-function ajax(){
-
+function ajaxView(data){
+	console.log(data);
 }
