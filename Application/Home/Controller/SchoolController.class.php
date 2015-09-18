@@ -15,4 +15,34 @@ class SchoolController extends Controller {
             'data'   => $data
         ]);
     }
+
+    //点赞
+    public function praise() {
+        $school_id = I('post.school_id');
+        if($school_id == '') {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '数据错误'
+            ]);
+        }
+        $time = date('Y-m-d', time());
+        $map = [
+            'user_id' => session('uid'),
+            'school_id' => $school_id,
+            'time' => $time
+        ];
+        $praise = M('user_praise');
+        if($praise->where($map)->count()) {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '您今天已赞过该学校'
+            ]);
+        }
+        $praise->add($map);
+        M('school')->where(['school_id' => $school_id])->setInc('praise');
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功'
+        ]);
+    }
 }

@@ -57,7 +57,7 @@ class CommentController extends Controller {
 
     //检查数据
     private function checkContent($input) {
-        if(!is_numeric($input['father_id'])) {
+        if(!is_numeric($input['father_id']) || !is_numeric($input['school_id'])) {
             return false;
         }
         if($input['content'] == '') {
@@ -67,7 +67,7 @@ class CommentController extends Controller {
             'father_id' => $input['father_id'],
             'content'   => $input['content'],
             'user_id'   => session('uid'),
-            'school_id' => session('school_id'),
+            'school_id' => $input['school_id'],
             'time'      => date('Y-m-d', time())
         ];
         return $data;
