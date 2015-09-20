@@ -58,8 +58,10 @@ $(function(){
 					});
 					pageView(data.data,uName,school_id,a);
 					page_token = true;
+					$.mobile.loading('hide');
 				}
 				else{
+					$.mobile.loading('hide');
 					alert(data.info);
 					page_token = true;
 				}

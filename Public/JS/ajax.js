@@ -36,6 +36,7 @@ function pageView(data,name,school_id,a){
 	}
 	$('.applyBtn').on('tap',function(){
 		var words = {};
+		$.mobile.loading('show');
 		words.school_id = school_id;
 		words.comtent = $('.wordsInput').val();
 		$.post(apply_comment,words,function(data){
@@ -43,6 +44,7 @@ function pageView(data,name,school_id,a){
 				alert("留言成功！主席团回复后将显示在下方。");
 			}else{
 				alert(data.info);
+				$.mobile.loading('hide');
 			}
 		});
 	});
