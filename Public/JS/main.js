@@ -4,10 +4,10 @@
 $(document).on("pageinit",function(){
 	$.mobile.loading('show');
 	var img = new Image();
-	img.src = "public/images/index_back.jpg";
+	img.src = "Public/images/index_back.jpg";
 	img.onload = function(){
 		img.onload = null;
-		$('#index').css('background-image',"url('public/images/index_back.jpg')");
+		$('#index').css('background-image',"url('Public/images/index_back.jpg')");
 		$.mobile.loading('hide');
 		$.mobile.changePage('#index');
 	};
