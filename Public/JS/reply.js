@@ -1,6 +1,7 @@
 /**
  * Created by truemenhale on 15/9/20.
  */
+var reply_token = true;
 function replyView(data){
 	$.mobile.changePage('#commentInfo',{
 		transition:'flow'
@@ -23,7 +24,7 @@ function replyView(data){
 						'<input type="text" data-role="none" placeholder="请在这里回复同学们的留言..." class="commentInput">'+
 						'<br/>'+
 						'<br/>'+
-						'<span class="reply"  comment_id="'+data.comment_id+'" >回复</span>'+
+						'<span class="reply"  comment_id="'+data[i].comment_id+'" >回复</span>'+
 			        '</div>'+
 				'</div>'+
 			'<p class="ui-li-aside" class="apply_date">'+data[i].time+'</p>'+
@@ -34,20 +35,27 @@ function replyView(data){
 	list.listview('refresh');
 	var aReplyBtn = $('.reply');
 	aReplyBtn.on('tap',function(){
-		$.mobile.loading('show');
-		var _this = $(this);
-		var rInput = _this.siblings('.commentInput'); 
-		var _data = {};
-		_data.comment_id = _this.attr('comment_id');
-		_data.content = rInput.val();
-		$.post(reply_path,_data,function(data){
-			$.mobile.loading('hide');
-			if(data.status == 200){
-				alert('回复成功！')
-			}
-			else{
-				alert(data.info);
-			}
-		});
+		if(reply_token){
+			$.mobile.loading('show');
+			var _this = $(this);
+			var rInput = _this.siblings('.commentInput');
+			var _data = {};
+			_data.comment_id = _this.attr('comment_id');
+			_data.content = rInput.val();
+			$.post(reply_path,_data,function(data){
+				$.mobile.loading('hide');
+				reply_token = true;
+				if(data.status == 200){
+					alert('回复成功！');
+					_this.parent('.words').parent('.usrBack').parent('li').remove();
+				}
+				else{
+					alert(data.info);
+				}
+			});
+		}
+		else{
+			return false;
+		}
 	});
 }
