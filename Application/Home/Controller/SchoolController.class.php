@@ -16,6 +16,17 @@ class SchoolController extends Controller {
         ]);
     }
 
+    //获取学校详情
+    public function detailSchool() {
+        $school_id = I('post.school_id');
+        $data = M('school')->where(['id' => $school_id])->field('school_introduce, praise as school_praise, school_pic')->find();
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功',
+            'data'   => $data
+        ]);
+    }
+
     //点赞
     public function praise() {
         $school_id = I('post.school_id');
