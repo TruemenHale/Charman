@@ -40,7 +40,7 @@ function pageView(data,name,school_id,a){
 		var words = {};
 		$.mobile.loading('show');
 		words.school_id = school_id;
-		words.comtent = $('.wordsInput').val();
+		words.content = $('.wordsInput').val();
 		$.post(apply_comment,words,function(data){
 			$.mobile.loading('hide');
 			if(data.status == 200){

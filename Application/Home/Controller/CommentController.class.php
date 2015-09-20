@@ -84,14 +84,14 @@ class CommentController extends Controller {
 
     //检查数据
     private function checkContent($input) {
-        if(!is_numeric($input['father_id']) || !is_numeric($input['school_id'])) {
+        if(!is_numeric($input['school_id'])) {
             return false;
         }
         if($input['content'] == '') {
             return false;
         }
         $data = [
-            'father_id' => $input['father_id'],
+            'father_id' => 0,
             'content'   => $input['content'],
             'user_id'   => session('uid'),
             'school_id' => $input['school_id'],
