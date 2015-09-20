@@ -38,7 +38,7 @@ $(function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
 			$.mobile.loading('show');
-			$.post(school_path,school_id,function(data){
+			$.post(school_path,'school_id:'+school_id,function(data){
 				if(data.status == 200){
 					var a = {};
 					a.page = 1;
