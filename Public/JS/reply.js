@@ -51,6 +51,7 @@ function replyView(data){
 						_this.parent('.words').parent('.usrBack').parent('li').remove();
 					}
 					else{
+						$.mobile.loading('hide');
 						alert(data.info);
 					}
 				});
