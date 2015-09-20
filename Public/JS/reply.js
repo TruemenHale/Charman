@@ -51,12 +51,12 @@ function replyView(data){
 						_this.parent('.words').parent('.usrBack').parent('li').remove();
 					}
 					else{
-						$.mobile.loading('hide');
 						alert(data.info);
 					}
 				});
 			}
 			else{
+				$.mobile.loading('hide');
 				alert('请输入回复内容！')
 			}
 		}
