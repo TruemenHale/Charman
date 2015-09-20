@@ -5,8 +5,8 @@ $(function(){
 	$('#loginBtn').on('tap',function(){
 		$.mobile.loading('show');
 		var _usr = {};
-		_usr.usrname = $('#usrName');
-		_usr.password = $('#password');
+		_usr.usrname = $('#usrName').val();
+		_usr.password = $('#password').val();
 		if(_usr.usrname && _usr.password){
 			$.post(login_path,_usr,function(data){
 				if(data.status == 200){
