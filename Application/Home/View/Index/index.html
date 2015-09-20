@@ -10,15 +10,15 @@
 	<script src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
 	<script src="__PUBLIC__/js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script>
-		var school_path = "{:U('Comment/getComment')}";
-		var get_chairman = "";
-		var get_unreply = "";
-		var get_commit = "";
-		var praise_path = "";
-		var search_path = "";
-		var apply_commit = "";
-		var login_path = "";
-		var reply_path = "";
+		var school_path = "{:U('School/detailSchool')}"; //获取学校情况
+		var get_chairman = "{:U('President/getPresidents')}"; //获取主席团
+		var get_comment = "{:U('Comment/getComment')}";//获取评论
+		var praise_path = "{:U('School/praise')}"; //用户点赞
+		var search_path = "{:U('Comment/search')}"; //搜索
+		var apply_comment = "{:U('Comment/comment')}"; //用户提交留言
+		var login_path = "{:U('Login/login')}"; //主席登录
+		var reply_path = "{:U('President/comment')}"; //主席回复
+		var get_unreply = "{:U('President/index')}"; //主席查看未回复留言
 	</script>
 	<script src="__PUBLIC__/js/main.js"></script>
 	<script src="__PUBLIC__/js/login.js"></script>
