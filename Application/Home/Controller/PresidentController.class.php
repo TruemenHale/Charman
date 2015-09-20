@@ -36,6 +36,12 @@ class PresidentController extends PresidentBaseController {
     //主席评论
     public function comment() {
         $input = I('post.');
+        if(!is_numeric($input['comment_id'])){
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '非法参数'
+            ]);
+        }
         if($input['comment_id'] == '' || $input['content'] == '') {
             $this->ajaxReturn([
                 'status' => 403,
