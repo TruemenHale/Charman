@@ -8,8 +8,9 @@ function pageView(data,name,school_id,a){
 		img.onload = null;
 		$('.uPhoto').css('background-image',"url('../Charman/public/images/index_back.jpg')");
 	};
+	var tName = name+'主席团';
 	$('.uName').html(name);
-	$('.Tname').html(name+'主席团');
+	$('.Tname').html(tName);
 	$('.prayNum').html(data.school_praise);
 	$('.uDire').html(data.school_introduce);
 	$('.pray').on('tap',function(school_id){
@@ -41,11 +42,11 @@ function pageView(data,name,school_id,a){
 		words.school_id = school_id;
 		words.comtent = $('.wordsInput').val();
 		$.post(apply_comment,words,function(data){
+			$.mobile.loading('hide');
 			if(data.status == 200){
 				alert("留言成功！主席团回复后将显示在下方。");
 			}else{
 				alert(data.info);
-				$.mobile.loading('hide');
 			}
 		});
 	});

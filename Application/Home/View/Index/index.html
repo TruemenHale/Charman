@@ -23,6 +23,7 @@
 	<script src="__PUBLIC__/js/main.js"></script>
 	<script src="__PUBLIC__/js/login.js"></script>
 	<script src="__PUBLIC__/js/ajax.js"></script>
+	<script src="__PUBLIC__/js/reply.js"></script>
 	<link rel="stylesheet" href="__PUBLIC__/style/style.css"/>
 </head>
 <body>
@@ -90,7 +91,6 @@
 			</div>
 			<p class="uTitle">
 				<span class="Tname">
-					<!--西南大学主席团-->
 				</span>
 				<span class="pray">
 					<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>
@@ -114,25 +114,6 @@
 			<div class="wordsList">
 				<a class="perSchool" href="#perSchool">还想单独勾搭各位主席？<br/>点击这里！</a>
 				<ul data-role="listview" data-inset="true" class="List">
-					<!--<li>-->
-						<!--<div class="touxiang">-->
-
-						<!--</div>-->
-						<!--<div class="usrBack">-->
-							<!--<p class="usrName">相二八</p>-->
-							<!--<div class="words" data-role="none" style="word-wrap:break-word; word-break:break-all;">-->
-								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
-								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
-								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
-								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
-							<!--</div>-->
-							<!--<br/>-->
-							<!--<div class="reply" style="word-wrap:break-word; word-break:break-all;white-space: normal;">-->
-								<!--回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”-->
-							<!--</div>-->
-						<!--</div>-->
-						<!--<p class="ui-li-aside" class="apply_date">9月16日</p>-->
-					<!--</li>-->
 					<span class="loadMore">加载更多...</span>
 				</ul>
 			</div>
@@ -142,7 +123,36 @@
 
 	</div>
 	<div data-role="page" id="commentInfo">
+		<div data-role="header" data-position="fixed" id="commentHeader">
+			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
+				&#xe63c;
+			</a>
+			<h1>留言回复</h1>
+		</div>
+		<ul data-role="listview" data-inset="true" class="reply_list">
+			<!--<li>-->
+				<!--<div class="touxiang">-->
 
+				<!--</div>-->
+				<!--<div class="usrBack">-->
+					<!--<p class="usrName">相二八</p>-->
+						<!--<div class="words" data-role="none" style="word-wrap:break-word; word-break:break-all;">-->
+							<!--<span class="comment_Content">-->
+								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
+								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
+							<!--</span>-->
+							<!--<br/>-->
+							<!--<br/>-->
+							<!--<input type="text" data-role="none" placeholder="请在这里回复同学们的留言..." class="commentInput">-->
+							<!--<br/>-->
+							<!--<br/>-->
+							<!--<span class="reply">回复</span>-->
+						<!--</div>-->
+				<!--</div>-->
+				<!--<p class="ui-li-aside" class="apply_date">9月16日</p>-->
+				<!--<br/>-->
+			<!--</li>-->
+		</ul>
 	</div>
 </body>
 </html>
