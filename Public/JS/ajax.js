@@ -2,28 +2,43 @@
  * Created by truemenhale on 15/9/15.
  */
 function ajaxView(data,name,school_id){
-	console.log(data);
-	var list = $('.List');
-	var _arr = [];
+	var img = new Image();
+	img.src = data.school_pic;
+	img.onload = function(){
+		img.onload = null;
+		$('.uPhoto').css('background-image',"url('../Charman/public/images/index_back.jpg')");
+	};
 	$('.uName').html(name);
 	$('.Tname').html(name+'主席团');
-	$('.prayNum').html();
+	$('.prayNum').html(data.school_praise);
 	$('.pray').on('tap',function(school_id){
-		$.post('',school_id,function(data){
+		$.post(praise_path,school_id,function(data){
 			if(data.status == 200){
 				alert('赏赞成功！谢谢支持！');
 			}
-			else if(data.status == 403){
-				alert('每个账号每天只能赏赞一次！');
-			}
 			else{
-				alert('网络故障请稍后再试！');
+				alert(data.info);
 			}
 		});
 	});
-	for(var i = 0;i<data.length;i++){
-		var _html = "<li>";
-	}
+	$('.applyBtn').on('tap',function(){
+		var words = {};
+		words.school_id = school_id;
+		words.comtent = $('.wordsInput').val();
+		$.post(apply_comment,words,function(data){
+			if(data.status == 200){
+				alert("留言成功！主席团回复后将显示在下方。");
+			}else{
+				alert(data.info);
+			}
+		});
+	});
+	$.mobile.changePage('#single',"turn");
+	$.mobile.loading('hide');
+}
+function commentView(data){
+	var list = $('.List');
+	var _arr = [];
 }
 //<li>
 //<div class="touxiang">

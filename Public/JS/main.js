@@ -34,19 +34,22 @@ $(function(){
 		var _this = $(this);
 		var uName = _this.html();
 		var school_id = _this.attr('data-school');
-		var _data = {};
-		_data.page = 1;
-		_data.school_id = school_id;
 		oSelector.animate({"top":"100%"},function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
 			$.mobile.loading('show');
-			$.post(school_path,_data,function(data){
+			$.post(school_path,school_id,function(data){
 				if(data.status == 200){
-					ajaxView(data.data,uName,school_id);
+					var a = {};
+					a.page = 1;
+					a.school_id = school_id;
+					$.post(get_comment,a,function(data){
+						commentView(data.data);
+					});
+					pageView(data.data,uName,school_id);
 				}
 				else{
-					alert('服务器连接失败！');
+					alert(data.info);
 				}
 			});
 		});
