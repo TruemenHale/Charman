@@ -22,9 +22,6 @@ $(function(){
 						$.mobile.loading('hide');
 						if(data.status == 200){
 							replyView(data.data);
-							$.mobile.changePage('#commentInfo',{
-								transition:'flow'
-							});
 						}
 						else{
 							alert(data.info);

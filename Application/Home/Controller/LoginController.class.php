@@ -17,10 +17,7 @@ class LoginController extends Controller {
             session('schoole_id', $user['school_id']);
             $this->ajaxReturn([
                 'status' => 200,
-                'info'   => '登录成功',
-                'data'   => [
-                    'redirect_url' => U('President/index'),
-                ]
+                'info'   => '登录成功'
             ]);
         } else {
             $this->ajaxReturn([

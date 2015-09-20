@@ -2,6 +2,9 @@
  * Created by truemenhale on 15/9/20.
  */
 function replyView(data){
+	$.mobile.changePage('#commentInfo',{
+		transition:'flow'
+	});
 	var list = $('.reply_list');
 	var _arr = [];
 	for(var i = 0;i < data.length;i++){
