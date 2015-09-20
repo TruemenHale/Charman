@@ -21,6 +21,15 @@ $(function(){
 	var aSeBox = $('.schoolSelector li');
 	var oBigC = $('.bigCircle');
 	var oSmallC = $('.smallCircle');
+	$.mobile.loading('show');
+	var img = new Image();
+	img.src = "Public/images/index_back.jpg";
+	img.onload = function(){
+		img.onload = null;
+		$('#index').css('background-image',"url('Public/images/index_back.jpg')");
+		$.mobile.loading('hide');
+		$.mobile.changePage('#index');
+	};
 	$(".selectorBtn").on('click',function(){
 		oMask.css('z-index',999);
 		oSelector.css('z-index',1000);
