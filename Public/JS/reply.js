@@ -42,7 +42,7 @@ function replyView(data){
 			var _data = {};
 			_data.comment_id = _this.attr('comment_id');
 			_data.content = rInput.val();
-			if(!_data.content){
+			if(_data.content.length != 0){
 				$.post(reply_path,_data,function(data){
 					$.mobile.loading('hide');
 					reply_token = true;
