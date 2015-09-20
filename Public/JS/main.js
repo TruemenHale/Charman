@@ -46,7 +46,7 @@ $(function(){
 					$.post(get_comment,a,function(data){
 						commentView(data.data);
 					});
-					pageView(data.data,uName,school_id);
+					pageView(data.data,uName,school_id,a);
 				}
 				else{
 					alert(data.info);

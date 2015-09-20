@@ -1,7 +1,7 @@
 /**
  * Created by truemenhale on 15/9/15.
  */
-function ajaxView(data,name,school_id){
+function ajaxView(data,name,school_id,a){
 	var img = new Image();
 	img.src = data.school_pic;
 	img.onload = function(){
@@ -21,6 +21,12 @@ function ajaxView(data,name,school_id){
 			}
 		});
 	});
+	$('.loadMore').on('tap',function(){
+		a.page++;
+		$.post(get_comment,a,function(data){
+			commentView(data.data);
+		});
+	});
 	$('.applyBtn').on('tap',function(){
 		var words = {};
 		words.school_id = school_id;
@@ -38,6 +44,7 @@ function ajaxView(data,name,school_id){
 }
 function commentView(data){
 	var list = $('.List');
+	var b = list.html();
 	var arr_ = [];
 	if(data.length != 0){
 		for(var i = 0;i < data.length;i++){
@@ -59,7 +66,7 @@ function commentView(data){
 				'</li>';
 				_arr.push(_html);
 		}
-		list.html(_arr.join(""));
+		list.html(b+_arr.join(""));
 		list.listview('refresh');
 	}
 }
