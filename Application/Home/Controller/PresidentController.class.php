@@ -4,7 +4,7 @@ use Think\Controller;
 class PresidentController extends PresidentBaseController {
     //查看未回复留言
     public function index(){
-        $data = M('comment')->where(['status' => 0, 'school_id' => session('school_id')])
+        $data = M('comment')->where(['status' => 0, 'comment.school_id' => session('school_id')])
                             ->join('join users on comment.user_id = users.id')
                             ->order('comment.time desc')
                             ->field('user_id as uid, users.nickname, users.avatar, comment.id as comment_id, comment.content, time, father_id')
