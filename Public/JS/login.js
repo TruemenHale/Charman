@@ -1,8 +1,14 @@
 /**
  * Created by truemenhale on 15/9/15.
  */
+var login_token = true;
 $(function(){
 	$('#loginBtn').on('tap',function(){
+		if(login_token){
+			login_token = false;
+		}else{
+			return;
+		}
 		var _usr = {};
 		_usr.username = $('#usrName').val();
 		_usr.password = $('#password').val();
