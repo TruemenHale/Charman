@@ -42,17 +42,22 @@ function replyView(data){
 			var _data = {};
 			_data.comment_id = _this.attr('comment_id');
 			_data.content = rInput.val();
-			$.post(reply_path,_data,function(data){
-				$.mobile.loading('hide');
-				reply_token = true;
-				if(data.status == 200){
-					alert('回复成功！');
-					_this.parent('.words').parent('.usrBack').parent('li').remove();
-				}
-				else{
-					alert(data.info);
-				}
-			});
+			if(!_data.content){
+				$.post(reply_path,_data,function(data){
+					$.mobile.loading('hide');
+					reply_token = true;
+					if(data.status == 200){
+						alert('回复成功！');
+						_this.parent('.words').parent('.usrBack').parent('li').remove();
+					}
+					else{
+						alert(data.info);
+					}
+				});
+			}
+			else{
+				alert('请输入回复内容！')
+			}
 		}
 		else{
 			return false;
