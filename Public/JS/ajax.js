@@ -1,7 +1,7 @@
 /**
  * Created by truemenhale on 15/9/15.
  */
-function ajaxView(data,name,school_id,a){
+function pageView(data,name,school_id,a){
 	var img = new Image();
 	img.src = data.school_pic;
 	img.onload = function(){
@@ -47,7 +47,7 @@ function ajaxView(data,name,school_id,a){
 function commentView(data){
 	var list = $('.List');
 	var b = list.html();
-	var arr_ = [];
+	var _arr = [];
 	if(data.length != 0){
 		for(var i = 0;i < data.length;i++){
 			var _html =
