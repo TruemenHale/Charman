@@ -23,7 +23,7 @@ function replyView(data){
 						'<input type="text" data-role="none" placeholder="请在这里回复同学们的留言..." class="commentInput">'+
 						'<br/>'+
 						'<br/>'+
-						'<span class="reply">回复</span>'+
+						'<span class="reply"  comment_id="'+data.comment_id+'" >回复</span>'+
 			        '</div>'+
 				'</div>'+
 			'<p class="ui-li-aside" class="apply_date">'+data[i].time+'</p>'+
@@ -32,4 +32,22 @@ function replyView(data){
 	}
 	list.html(_arr.join(""));
 	list.listview('refresh');
+	var aReplyBtn = $('.reply');
+	aReplyBtn.on('tap',function(){
+		$.mobile.loading('show');
+		var _this = $(this);
+		var rInput = $(this + input);
+		var _data = {};
+		_data.comment_id = _this.attr('comment_id');
+		_data.content = rInput.val();
+		$.post(reply_path,_data,function(data){
+			$.mobile.loading('hide');
+			if(data.status == 200){
+				alert('回复成功！')
+			}
+			else{
+				alert(data.info);
+			}
+		});
+	});
 }
