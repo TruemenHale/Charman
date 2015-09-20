@@ -23,7 +23,7 @@ class CommentController extends Controller {
             $v['reply'] = M('comment')->where(['father_id' => $v['comment_id'], 'school_id' => $input['school_id'], 'status' => 1])
                                         ->join('join users on comment.user_id = users.id')
                                         ->field('users.nickname, users.avatar, comment.content, time')
-                                        ->select();
+                                        ->find();
         }
         $this->ajaxReturn([
             'status' => 200,
