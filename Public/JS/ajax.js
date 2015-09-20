@@ -39,7 +39,9 @@ function ajaxView(data,name,school_id,a){
 			}
 		});
 	});
-	$.mobile.changePage('#single',"turn");
+	$.mobile.changePage('#single',{
+		transition:"turn"
+	});
 	$.mobile.loading('hide');
 }
 function commentView(data){
