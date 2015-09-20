@@ -13,6 +13,8 @@
 //	};
 //
 //});
+var page_token = true;
+var comment_token = true;
 $(function(){
 	var oMask = $('.mask');
 	var oSelector = $('.schoolSelector');
@@ -31,6 +33,12 @@ $(function(){
 		});
 	});
 	aSeBox.on('tap',function(){
+		if(page_token){
+			page_token = false;
+		}
+		else{
+			return;
+		}
 		var _this = $(this);
 		var uName = _this.html();
 		var school_id = _this.attr('data-school');
@@ -49,9 +57,11 @@ $(function(){
 						commentView(data.data);
 					});
 					pageView(data.data,uName,school_id,a);
+					page_token = true;
 				}
 				else{
 					alert(data.info);
+					page_token = true;
 				}
 			});
 		});

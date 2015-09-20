@@ -17,6 +17,7 @@ $(function(){
 			$.post(login_path,_usr,function(data){
 				if(data.status == 200){
 					$.mobile.loading('hide');
+					login_token = true;
 					$.mobile.changePage('#commentInfo',{
 						transition:'flow'
 					});

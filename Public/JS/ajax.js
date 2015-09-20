@@ -21,12 +21,19 @@ function pageView(data,name,school_id,a){
 			}
 		});
 	});
-	$('.loadMore').on('tap',function(){
-		a.page++;
-		$.post(get_comment,a,function(data){
-			commentView(data.data);
+	if(comment_token){
+		comment_token = false;
+		$('.loadMore').on('tap',function(){
+			a.page++;
+			$.post(get_comment,a,function(data){
+				commentView(data.data);
+				comment_token = true;
+			});
 		});
-	});
+	}
+	else{
+		return false;
+	}
 	$('.applyBtn').on('tap',function(){
 		var words = {};
 		words.school_id = school_id;
