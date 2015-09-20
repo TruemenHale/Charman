@@ -1,18 +1,6 @@
 /**
  * Created by truemenhale on 15/9/15.
  */
-//$(document).on("pageinit",'#mask',function(){
-//	$.mobile.loading('show');
-//	var img = new Image();
-//	img.src = "Public/images/index_back.jpg";
-//	img.onload = function(){
-//		img.onload = null;
-//		$('#index').css('background-image',"url('Public/images/index_back.jpg')");
-//		$.mobile.loading('hide');
-//		$.mobile.changePage('#index');
-//	};
-//
-//});
 var page_token = true;
 var comment_token = true;
 $(function(){
@@ -39,6 +27,22 @@ $(function(){
 		oSelector.animate({"top":"100%"},function(){
 			oMask.css('z-index',-999);
 			oSelector.css('z-index',-1000);
+		});
+	});
+	$('.reply').on('tap',function(){
+		$.mobile.loading('show');
+		var reply = $('.commentInput').val();
+		var _data = {};
+		_data.comment_id = 0;
+		_data.content = reply;
+		$.post(reply_path,reply,function(data){
+			if(data.status == 200){
+				alert('留言成功！');
+				$.mobile.loading('hide');
+			}else{
+				alert(data.info);
+				$.mobile.loading('hide');
+			}
 		});
 	});
 	aSeBox.on('tap',function(){

@@ -3,6 +3,25 @@
   padding: 0;
   font-family: "Microsoft Yahei", sans-serif;
   text-shadow: none;
+  .backRow{
+    line-height: 11px;
+
+    top: 14px;
+
+    left: 8px;
+
+    text-decoration: none;
+
+    border:0;
+
+    border-radius: 0; /*图标形态，0=方形，默认圆形*/
+
+    background-color:transparent;
+
+    width: 22px;
+
+    height: 22px;
+  }
 }
 @font-face {font-family: 'iconfont';
   src: url('../iconfont/iconfont.eot'); /* IE9*/
@@ -156,26 +175,6 @@
       padding: 15px 0;
       background: #f49d3c;
   }
-}
-.backRow{
-  line-height: 11px;
-
-  top: 14px;
-
-  left: 8px;
-
-  text-decoration: none;
-
-  border:0;
-
-  border-radius: 0; /*图标形态，0=方形，默认圆形*/
-
-  background-color:transparent;
-
-  width: 22px;
-
-  height: 22px;
-
 }
 #single{
   background: #52c6e7;
@@ -347,6 +346,77 @@
           color: #666;
         }
       }
+    }
+  }
+}
+#commentInfo{
+  background: #e8e8e8;
+  ul{
+    margin: 8px auto;
+    width: 100%;
+    li{
+      position: relative;
+      .touxiang{
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        -ms-background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        border-radius: 50%;
+        float: left;
+        overflow: hidden;
+        background: #ff0000;
+      }
+      color: #999999;
+      .usrName{
+        color: #0083a9;
+      }
+      .usrBack{
+        width: 73%;
+        float: left;
+        margin-left: 15px;
+        word-wrap:break-word;
+      }
+      .words{
+        width: 100%;
+        white-space: normal;
+        font-size: 13px;
+        color: #363636;
+      }
+      .commentInput{
+        font-size: 11px;
+        width: 100%;
+        border: none;
+        padding: 8px 3px;
+        padding-left: 6px;
+        box-shadow:2px 2px 5px #ccc inset;
+        border-radius: 3px;
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+      .reply{
+        background: #f49d3c;
+        color: #ffffff;
+        border-radius: 3px;
+        font-size: 12px;
+        padding: 6px 16px;
+        float: right;
+      }
+    }
+  }
+  #commentHeader{
+    background: #0083a9;
+    color: #ffffff;
+    text-shadow: 0 0 1px #44a4c0;
+    font-size: 14px;
+    width: auto;
+    text-align: center;
+    border: none;
+    h5{
+      font-size: 14px;
+      font-weight: 500;
     }
   }
 }

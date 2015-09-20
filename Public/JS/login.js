@@ -15,16 +15,23 @@ $(function(){
 		if(_usr.username && _usr.password){
 			$.mobile.loading('show');
 			$.post(login_path,_usr,function(data){
+				$.mobile.loading('hide');
+				login_token = true;
 				if(data.status == 200){
-					$.mobile.loading('hide');
-					login_token = true;
-					$.mobile.changePage('#commentInfo',{
-						transition:'flow'
+					$.post(get_unreply,1,function(data){
+						$.mobile.loading('hide');
+						if(data.status == 200){
+							replyView(data.data);
+							$.mobile.changePage('#commentInfo',{
+								transition:'flow'
+							});
+						}
+						else{
+							alert(data.info);
+						}
 					});
-				}
-				else{
+				}else{
 					alert(data.info);
-					$.mobile.loading('hide');
 				}
 			});
 		}
