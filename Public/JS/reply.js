@@ -36,7 +36,7 @@ function replyView(data){
 	aReplyBtn.on('tap',function(){
 		$.mobile.loading('show');
 		var _this = $(this);
-		var rInput = $(this + input);
+		var rInput = _this.siblings('.commentInput'); 
 		var _data = {};
 		_data.comment_id = _this.attr('comment_id');
 		_data.content = rInput.val();
