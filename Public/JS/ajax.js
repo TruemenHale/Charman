@@ -38,24 +38,28 @@ function ajaxView(data,name,school_id){
 }
 function commentView(data){
 	var list = $('.List');
-	var _arr = [];
+	var arr_ = [];
+	if(data.length != 0){
+		for(var i = 0;i < data.length;i++){
+			var _html =
+				'<li>'+
+					'<div class="touxiang" '+'style = "background-image: '+'url("'+data[i].avatar+'")">'+
+					'</div>'+
+					'<div class="usrBack">'+
+						'<p class="usrName">'+data[i].nickname+'</p>'+
+						'<div class="words" data-role="none" style="word-wrap:break-word; word-break:break-all;">'
+						+data[i].content+
+						'</div>'+
+						'<br/>'+
+						'<div class="reply" style="word-wrap:break-word; word-break:break-all;white-space: normal;">'+
+							'回复：“<span class="reWords">'+data[i].reply.content+'</span>”'+
+						'</div>'+
+					'</div>'+
+					'<p class="ui-li-aside" class="apply_date">'+data[i].time+'</p>'+
+				'</li>';
+				_arr.push(_html);
+		}
+		list.html(_arr.join(""));
+		list.listview('refresh');
+	}
 }
-//<li>
-//<div class="touxiang">
-//
-//</div>
-//<div class="usrBack">
-//<p class="usrName">相二八</p>
-//<div class="words" data-role="none" style="word-wrap:break-word; word-break:break-all;">
-//是是是是是是是是是是是是是是是是是是是是是是是
-//是是是是是是是是是是是是是是是是是是是是是是是
-//是是是是是是是是是是是是是是是是是是是是是是是
-//是是是是是是是是是是是是是是是是是是是是是是是
-//</div>
-//<br/>
-//<div class="reply" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
-//回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
-//</div>
-//</div>
-//<p class="ui-li-aside" class="apply_date">9月16日</p>
-//</li>
