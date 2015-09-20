@@ -8,7 +8,7 @@ $(function(){
 		_usr.usrname = $('#usrName');
 		_usr.password = $('#password');
 		_usr = JSON.stringify(_usr);
-		$.post('url',_usr,function(data){
+		$.post(login_path,_usr,function(data){
 			if(data.status == 200){
 				$.mobile.loading('hide');
 				$.mobile.changePage();
