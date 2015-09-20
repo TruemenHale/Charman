@@ -50,7 +50,7 @@ $(function(){
 			page_token = false;
 		}
 		else{
-			return;
+			return false;
 		}
 		var _this = $(this);
 		var uName = _this.html();
@@ -62,6 +62,7 @@ $(function(){
 			oSelector.css('z-index',-1000);
 			$.mobile.loading('show');
 			$.post(school_path,_data,function(data){
+				$.mobile.loading('hide');
 				if(data.status == 200){
 					var a = {};
 					a.page = 1;
@@ -71,10 +72,8 @@ $(function(){
 					});
 					pageView(data.data,uName,school_id,a);
 					page_token = true;
-					$.mobile.loading('hide');
 				}
 				else{
-					$.mobile.loading('hide');
 					alert(data.info);
 					page_token = true;
 				}

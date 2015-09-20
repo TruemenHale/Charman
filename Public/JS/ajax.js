@@ -9,6 +9,9 @@ function pageView(data,name,school_id,a){
 		$('.uPhoto').css('background-image',"url('../Charman/public/images/index_back.jpg')");
 	};
 	var tName = name+'主席团';
+	$.mobile.changePage('#single',{
+		transition:"turn"
+	});
 	$('.uName').html(name);
 	$('.Tname').html(tName);
 	$('.prayNum').html(data.school_praise);
@@ -49,9 +52,6 @@ function pageView(data,name,school_id,a){
 				alert(data.info);
 			}
 		});
-	});
-	$.mobile.changePage('#single',{
-		transition:"turn"
 	});
 	$.mobile.loading('hide');
 }
