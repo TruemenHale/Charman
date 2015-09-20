@@ -2,6 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 class PresidentController extends PresidentBaseController {
+    //查看未回复留言
     public function index(){
         $data = M('comment')->where(['status' => 0, 'school_id' => session('school_id')])
                             ->join('join users on comment.user_id = users.id')
