@@ -11,6 +11,7 @@ function pageView(data,name,school_id,a){
 	$('.uName').html(name);
 	$('.Tname').html(name+'主席团');
 	$('.prayNum').html(data.school_praise);
+	$('.uDire').html(data.school_introduce);
 	$('.pray').on('tap',function(school_id){
 		$.post(praise_path,school_id,function(data){
 			if(data.status == 200){
