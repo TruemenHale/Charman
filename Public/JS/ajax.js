@@ -7,7 +7,7 @@ function pageView(data,name,school_id,a){
 	oBack.on('tap',function(){
 		var list = $('.List');
 		list.html("");
-		$.changePage('#index',{
+		$.mobile.changePage('#index',{
 			transition:'flow'
 		});
 	});
