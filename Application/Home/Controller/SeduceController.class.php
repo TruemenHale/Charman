@@ -19,7 +19,7 @@ class SeduceController extends Controller {
                 $va['reply'] = $comment
                     ->where(['status' => 1, 'president_id' => 0, 'father_id' => $va['comment_id']])
                     ->field('user_president.content, user_president.time')
-                    ->select();
+                    ->find();
             }
 
         }
