@@ -14,7 +14,7 @@ class LoginController extends Controller {
             $user = $president->where($map)->find();
             session('username', $user['username']);
             session('president_id', $user['id']);
-            session('schoole_id', $user['school_id']);
+            session('school_id', $user['school_id']);
             $this->ajaxReturn([
                 'status' => 200,
                 'info'   => '登录成功'

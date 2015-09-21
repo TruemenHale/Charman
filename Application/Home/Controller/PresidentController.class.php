@@ -4,7 +4,7 @@ use Think\Controller;
 class PresidentController extends PresidentBaseController {
     //查看未回复留言
     public function index(){
-        $data = M('comment')->where(['status' => 0, 'school_id' => session('school_id')])
+        $data = M('comment')->where(['status' => 0, 'comment.school_id' => session('school_id')])
                             ->join('join users on comment.user_id = users.id')
                             ->order('comment.time desc')
                             ->field('user_id as uid, users.nickname, users.avatar, comment.id as comment_id, comment.content, time, father_id')
@@ -13,6 +13,39 @@ class PresidentController extends PresidentBaseController {
             'status' => 200,
             'info'   => '成功',
             'data'   => $data
+        ]);
+    }
+
+    //查看未回复勾搭
+    public function seduceIndex(){
+        $data = M('user_president')->where(['status' => 0, 'user_president.school_id' => session('school_id')])
+            ->join('join users on user_president.user_id = users.id')
+            ->order('user_president.time desc')
+            ->field('user_id as uid, users.nickname, users.avatar, user_president.id as comment_id, user_president.content, time')
+            ->select();
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功',
+            'data'   => $data
+        ]);
+    }
+
+    //回复勾搭
+    public function replySeduce(){
+        $content = I('post.content');
+        $comment_id = I('post.comment_id');
+        $data = [
+            'user_id' => session('president_id'),
+            'content' => $content,
+            'time'    => date('Y-m-d', time()),
+            'president_id' => 0,
+            'father_id' => $comment_id,
+            'status'  => 0
+        ];
+        M('user_president')->add($data);
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功'
         ]);
     }
 
@@ -36,6 +69,12 @@ class PresidentController extends PresidentBaseController {
     //主席评论
     public function comment() {
         $input = I('post.');
+        if(!is_numeric($input['comment_id'])){
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '非法参数'
+            ]);
+        }
         if($input['comment_id'] == '' || $input['content'] == '') {
             $this->ajaxReturn([
                 'status' => 403,
