@@ -1,6 +1,7 @@
 /**
  * Created by truemenhale on 15/9/21.
  */
+var applyChairman_token = true;
 function viewChariman(data){
 	var list = $('.comment_holder');
 	var arr_ = [];
@@ -86,6 +87,24 @@ function viewChariman(data){
 	var oSmallC = oP.find('.smallCircle');
 	oBigC.css({"left":-$(window).width()*0.1});
 	oSmallC.css({"left":-$(window).width()*0.4});
+	$('.applyChairman').on('tap',function(){
+		if(applyChairman_token){
+			applyChairman_token = false;
+			var _this = $(this);
+			$.mobile.loading('show');
+			var _data = {};
+			_data.president_id = _this.attr('apply-id');
+			$.post(apply_chairman,_data,function(data){
+				$.mobile.loading('hide');
+				applyChairman_token = true;
+				if(data.status == 200){
+					alert('留言成功，主席大大会按时查看并回复！')
+				}else{
+					alert(data.info);
+				}
+			})
+		}
+	});
 	$.mobile.changePage('#charman',{
 		transition:'flow'
 	})
