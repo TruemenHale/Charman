@@ -71,6 +71,9 @@ function viewChariman(data){
 	for(var i = 0;i < cBox.length;i++){
 		aCommentList.eq(i).html(cBox[i].join(""));
 	}
+	$.mobile.changePage('#charman',{
+		transition:'flow'
+	})
 }
 //'<li>'+
 //'<div class="comment_a">'+
