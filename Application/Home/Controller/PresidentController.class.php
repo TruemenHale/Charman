@@ -16,6 +16,39 @@ class PresidentController extends PresidentBaseController {
         ]);
     }
 
+    //查看未回复勾搭
+    public function seduceIndex(){
+        $data = M('user_president')->where(['status' => 0, 'user_president.school_id' => session('school_id')])
+            ->join('join users on user_president.user_id = users.id')
+            ->order('user_president.time desc')
+            ->field('user_id as uid, users.nickname, users.avatar, user_president.id as comment_id, user_president.content, time')
+            ->select();
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功',
+            'data'   => $data
+        ]);
+    }
+
+    //回复勾搭
+    public function replySeduce(){
+        $content = I('post.content');
+        $comment_id = I('post.comment_id');
+        $data = [
+            'user_id' => session('president_id'),
+            'content' => $content,
+            'time'    => date('Y-m-d', time()),
+            'president_id' => 0,
+            'father_id' => $comment_id,
+            'status'  => 0
+        ];
+        M('user_president')->add($data);
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功'
+        ]);
+    }
+
     //获取主席团
     public function getPresidents() {
         $school_id = I('post.school_id');

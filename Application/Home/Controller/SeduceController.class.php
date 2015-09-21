@@ -13,11 +13,11 @@ class SeduceController extends Controller {
                             ->where(['status' => 1, 'president_id' => $v['president_id'], 'father_id' => 0])
                             ->join('join users on user_president.user_id = users.id')
                             ->field('users.nickname, users.avatar, user_president.content, user_president.time, user_president.id as comment_id')
+                            ->limit(4)
                             ->select();
             foreach($v['comment'] as &$va) {
                 $va['reply'] = $comment
                     ->where(['status' => 1, 'president_id' => 0, 'father_id' => $va['comment_id']])
-                    ->join('join president on user_president.user_id = president.id')
                     ->field('user_president.content, user_president.time')
                     ->select();
             }
