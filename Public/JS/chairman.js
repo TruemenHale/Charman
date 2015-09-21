@@ -8,7 +8,7 @@ function viewChariman(data){
 	var oBack = $('.backSingle');
 	oBack.on('tap',function(){
 		list.html("");
-		$.changePage('#single',{
+		$.mobile.changePage('#single',{
 			transition:'flow'
 		});
 	});
