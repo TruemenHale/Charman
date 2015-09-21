@@ -4,7 +4,6 @@
 function viewChariman(data){
 	var list = $('.comment_holder');
 	var arr_ = [];
-	var _arr = [];
 	var cBox = [];
 	for(var i = 0;i<data.length;i++){
 		var _html = '<li>'+
@@ -43,6 +42,7 @@ function viewChariman(data){
 		'</li>'
 		arr_.push(_html);
 		for(var j = 0;j < data[i].comment.length;j++){
+			var _arr = [];
 			var html_ =
 				'<li>'+
 				'<div class="comment_a" style="background-image: url("'+data[i].comment[j].avatar+'")">'+
