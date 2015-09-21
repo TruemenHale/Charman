@@ -64,8 +64,10 @@ function viewChariman(data){
 				'</li>';
 				_arr.push(html_);
 		}
+		console.log(_arr);
 		cBox.push(_arr);
 	}
+	console.log(cBox.length);
 	list.html(arr_.join(""));
 	var aCommentList = $('.comment_list');
 	for(var i = 0;i < cBox.length;i++){
