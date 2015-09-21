@@ -73,6 +73,11 @@ function viewChariman(data){
 	for(var i = 0;i < cBox.length;i++){
 		aCommentList.eq(i).html(cBox[i].join(""));
 	}
+	var oP = $('#charman');
+	var oBigC = oP.find('.bigCircle');
+	var oSmallC = oP.find('.smallCircle');
+	oBigC.css({"left":-$(window).width()*0.1});
+	oSmallC.css({"left":-$(window).width()*0.4});
 	$.mobile.changePage('#charman',{
 		transition:'flow'
 	})

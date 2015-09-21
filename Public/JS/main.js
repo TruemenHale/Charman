@@ -80,6 +80,7 @@ $(function(){
 							var b = {};
 							b.school_id = school_id;
 							$.post(chairman_path,b,function(data) {
+									chairman_token = true;
 									$.mobile.loading('hide');
 									if (data.status == 200) {
 										viewChariman(data.data);
