@@ -27,98 +27,98 @@
 	<link rel="stylesheet" href="__PUBLIC__/style/style.css"/>
 </head>
 <body>
-	<!--<div data-role="page" id="mask">-->
+	<div data-role="page" id="mask">
 
-	<!--</div>-->
-	<!--<div data-role="page" id="index">-->
-		<!--<div class="mask"></div>-->
-		<!--<div class="spaceKeeper"></div>-->
-		<!--<div class="selectorBtn">-->
+	</div>
+	<div data-role="page" id="index">
+		<div class="mask"></div>
+		<div class="spaceKeeper"></div>
+		<div class="selectorBtn">
 
-		<!--</div>-->
-		<!--<ul class="schoolSelector" data-role="listview" class="usr_input">-->
-			<!--<span class="selector_title">-->
-				<!--选择学校-->
-			<!--</span>-->
-			<!--<volist name="data" id="vo">-->
-				<!--<li data-school="{$vo.school_id}" data-praise="{$vo.praise}">-->
-					<!--{$vo.school_name}-->
-				<!--</li>-->
-			<!--</volist>-->
-		<!--</ul>-->
-		<!--<div class="charmanLogin">-->
-			<!--<a href="#login" data-transition="flow">主席登陆</a>-->
-		<!--</div>-->
-		<!--<p class="copyright">-->
-			<!--共青团重庆市委学校部 重庆市学生联合会 制-->
-		<!--</p>-->
-	<!--</div>-->
-	<!--<div data-role="page" id="login">-->
-		<!--<div data-role="header" data-position="fixed" id="header">-->
-			<!--<a href="#index" data-transition="turn" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">-->
-				<!--&#xe63c;-->
-			<!--</a>-->
-			<!--<h5>主席登陆</h5>-->
-		<!--</div>-->
-		<!--<div class="login_title">-->
+		</div>
+		<ul class="schoolSelector" data-role="listview" class="usr_input">
+			<span class="selector_title">
+				选择学校
+			</span>
+			<volist name="data" id="vo">
+				<li data-school="{$vo.school_id}" data-praise="{$vo.praise}">
+					{$vo.school_name}
+				</li>
+			</volist>
+		</ul>
+		<div class="charmanLogin">
+			<a href="#login" data-transition="flow">主席登陆</a>
+		</div>
+		<p class="copyright">
+			共青团重庆市委学校部 重庆市学生联合会 制
+		</p>
+	</div>
+	<div data-role="page" id="login">
+		<div data-role="header" data-position="fixed" id="header">
+			<a href="#index" data-transition="turn" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
+				&#xe63c;
+			</a>
+			<h5>主席登陆</h5>
+		</div>
+		<div class="login_title">
 
-		<!--</div>-->
-		<!--<ul data-inset="true" data-role="listview" class="usr_input">-->
-			<!--<li>-->
-				<!--<i class="iconfont" style="font-size: 16px;margin-left: 3px;display: inline-block">&#xe625;</i>-->
-				<!--账号-->
-				<!--<input type="text" id="usrName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的账号" data-role="none"/>-->
-			<!--</li>-->
-			<!--<li>-->
-				<!--<i class="iconfont" style="font-size: 20px;">&#xe61b;</i>-->
-				<!--密码-->
-				<!--<input type="password" id="password" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的密码" data-role="none"/>-->
-			<!--</li>-->
-		<!--</ul>-->
-		<!--<div id="loginBtn" data-role="none">-->
-			<!--登陆-->
-		<!--</div>-->
-	<!--</div>-->
-	<!--<div data-role="page" id="single">-->
-		<!--<div data-role="header" data-position="fixed" id="singleHeader">-->
-			<!--<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">-->
-				<!--&#xe63c;-->
-			<!--</a>-->
-			<!--<h1 class="uName"></h1>-->
-		<!--</div>-->
-		<!--<div role="main" class="ui-content">-->
-			<!--<div class="uPhoto">-->
-			<!--</div>-->
-			<!--<p class="uTitle">-->
-				<!--<span class="Tname">-->
-				<!--</span>-->
-				<!--<span class="pray">-->
-					<!--<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>-->
-					<!--赏赞 <span class="prayNum"></span>-->
-				<!--</span>-->
-			<!--</p>-->
-			<!--<div class="intro">-->
-				<!--&nbsp;&nbsp;&nbsp;<span class="uDire"></span><span class="forMore">更多</span>-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class="wordsBoard">-->
-			<!--<div class="bigCircle"></div>-->
-			<!--<div class="smallCircle"></div>-->
-			<!--<div class="wordsHolder">-->
-				<!--<h5>留言板</h5>-->
-				<!--<textarea name="" id="" class="wordsInput" data-role="none" placeholder="请在这里输入你的留言..."></textarea>-->
-				<!--<div class="applyBtn">-->
-					<!--提交-->
-				<!--</div>-->
-			<!--</div>-->
-			<!--<div class="wordsList">-->
-				<!--<a class="perSchool" href="#charman">还想单独勾搭各位主席？<br/>点击这里！</a>-->
-				<!--<ul data-role="listview" data-inset="true" class="List">-->
-					<!--<span class="loadMore">加载更多...</span>-->
-				<!--</ul>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
+		</div>
+		<ul data-inset="true" data-role="listview" class="usr_input">
+			<li>
+				<i class="iconfont" style="font-size: 16px;margin-left: 3px;display: inline-block">&#xe625;</i>
+				账号
+				<input type="text" id="usrName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的账号" data-role="none"/>
+			</li>
+			<li>
+				<i class="iconfont" style="font-size: 20px;">&#xe61b;</i>
+				密码
+				<input type="password" id="password" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的密码" data-role="none"/>
+			</li>
+		</ul>
+		<div id="loginBtn" data-role="none">
+			登陆
+		</div>
+	</div>
+	<div data-role="page" id="single">
+		<div data-role="header" data-position="fixed" id="singleHeader">
+			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
+				&#xe63c;
+			</a>
+			<h1 class="uName"></h1>
+		</div>
+		<div role="main" class="ui-content">
+			<div class="uPhoto">
+			</div>
+			<p class="uTitle">
+				<span class="Tname">
+				</span>
+				<span class="pray">
+					<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>
+					赏赞 <span class="prayNum"></span>
+				</span>
+			</p>
+			<div class="intro">
+				&nbsp;&nbsp;&nbsp;<span class="uDire"></span><span class="forMore">更多</span>
+			</div>
+		</div>
+		<div class="wordsBoard">
+			<div class="bigCircle"></div>
+			<div class="smallCircle"></div>
+			<div class="wordsHolder">
+				<h5>留言板</h5>
+				<textarea name="" id="" class="wordsInput" data-role="none" placeholder="请在这里输入你的留言..."></textarea>
+				<div class="applyBtn">
+					提交
+				</div>
+			</div>
+			<div class="wordsList">
+				<a class="perSchool" href="#charman">还想单独勾搭各位主席？<br/>点击这里！</a>
+				<ul data-role="listview" data-inset="true" class="List">
+					<span class="loadMore">加载更多...</span>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<div data-role="page" id="charman">
 		<div data-role="header" data-position="fixed" id="charmanHeader">
 			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
