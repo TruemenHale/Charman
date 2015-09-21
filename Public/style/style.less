@@ -176,7 +176,7 @@
       background: #f49d3c;
   }
 }
-#single{
+#single {
   background: #52c6e7;
   #singleHeader{
     background: #0083a9;
@@ -417,6 +417,179 @@
     h5{
       font-size: 14px;
       font-weight: 500;
+    }
+  }
+}
+#charman{
+  background: #52c6e7;
+  .comment_holder{
+    width: 100%;
+    &>li{
+      margin-bottom: 250px;
+    }
+  }
+  #charmanHeader{
+    background: #0083a9;
+    color: #ffffff;
+    text-shadow: 0 0 1px #44a4c0;
+    font-size: 15px;
+    font-weight: 400;
+    width: auto;
+    text-align: center;
+    border: none;
+  }
+  .position{
+    font-size: 10px;
+  }
+  .cPhoto{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 18px;
+    height: 180px;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    box-shadow: 0 0 0 3px #fff;
+  }
+  .cTitle{
+    display: block;
+    color: #333333;
+    text-shadow: 1px 1px 1px #4a9fb7;
+    overflow: hidden;
+    margin: 10px auto;
+    width: 92%;
+    .Cname{
+      font-weight: 500;
+      float: left;
+    }
+    .praise{
+      font-size: 10px;
+      float: right;
+      line-height: 20px;
+    }
+  }
+  .cIntro{
+    padding: 15px;
+    background: #a9e3f3;
+    font-size: 12px;
+    width: 88%;
+    margin: 0 auto;
+    color: #333333;
+    text-shadow:1px 1px 1px #96c8d6;
+    line-height: 20px;
+    font-weight: 300;
+  }
+  .wordsBoard{
+    width: 100%;
+    height: 500px;
+    margin-top: 18px;
+    position: relative;
+    .bigCircle{
+      background: #ffb850;
+      width: 120%;
+      height: 100px;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .smallCircle{
+      background: #f4973c;
+      width: 180%;
+      height: 400px;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .wordsHolder{
+      position: absolute;
+      width: 100%;
+      top: 15px;
+      overflow: hidden;
+      h5{
+        color: #613d1d;
+        text-align: center;
+        font-size: 13px;
+      }
+      .wordsInput{
+        display: block;
+        width:88%;
+        border-radius: 0;
+        border: none;
+        margin: 15px auto;
+        overflow: scroll;
+        font-size: 13px;
+        resize: none;
+        padding: 8px;
+        height: 120px;
+        max-height: 120px;
+      }
+      .applyBtn{
+        float: right;
+        font-size: 14px;
+        padding: 5px 18px;
+        color: #fbfa9f;
+        text-align: center;
+        background: #a35d3b;
+        margin-right: 6%;
+      }
+    }
+    .comment_List {
+      position: absolute;
+      width: 100%;
+      background: #f4973c;
+      height: auto;
+      min-height: 250px;
+      top: 225px;
+      padding-bottom: 30px;
+      .perSchool {
+        display: inline-block;
+        margin-top: 5px;
+        width: 100%;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 12px;
+        color: #ffffff;
+      }
+      ul {
+        display: block;
+        margin: 5px auto;
+        width: 92%;
+        border-radius: 0;
+        li {
+          .comment_a {
+            width: 50px;
+            height: 50px;
+            background: #ff0000;
+            background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+            -ms-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            border-radius: 50%;
+            float: left;
+            overflow: hidden;
+          }
+          color: #999999;
+          .commenter {
+            color: #363636;
+          }
+          .usrBack {
+            width: 75%;
+            float: left;
+            margin-left: 15px;
+            word-wrap: break-word;
+          }
+          .words_content {
+            width: 100%;
+            white-space: normal;
+            font-size: 13px;
+          }
+          .reply_content {
+            width: 100%;
+            font-size: 11px;
+          }
+        }
+      }
     }
   }
 }
