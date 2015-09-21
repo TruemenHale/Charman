@@ -27,80 +27,125 @@
 	<link rel="stylesheet" href="__PUBLIC__/style/style.css"/>
 </head>
 <body>
-	<div data-role="page" id="mask">
+	<!--<div data-role="page" id="mask">-->
 
-	</div>
-	<div data-role="page" id="index">
-		<div class="mask"></div>
-		<div class="spaceKeeper"></div>
-		<div class="selectorBtn">
+	<!--</div>-->
+	<!--<div data-role="page" id="index">-->
+		<!--<div class="mask"></div>-->
+		<!--<div class="spaceKeeper"></div>-->
+		<!--<div class="selectorBtn">-->
 
-		</div>
-		<ul class="schoolSelector" data-role="listview" class="usr_input">
-			<span class="selector_title">
-				选择学校
-			</span>
-			<volist name="data" id="vo">
-				<li data-school="{$vo.school_id}" data-praise="{$vo.praise}">
-					{$vo.school_name}
-				</li>
-			</volist>
-		</ul>
-		<div class="charmanLogin">
-			<a href="#login" data-transition="flow">主席登陆</a>
-		</div>
-		<p class="copyright">
-			共青团重庆市委学校部 重庆市学生联合会 制
-		</p>
-	</div>
-	<div data-role="page" id="login">
-		<div data-role="header" data-position="fixed" id="header">
-			<a href="#index" data-transition="turn" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
-				&#xe63c;
-			</a>
-			<h5>主席登陆</h5>
-		</div>
-		<div class="login_title">
+		<!--</div>-->
+		<!--<ul class="schoolSelector" data-role="listview" class="usr_input">-->
+			<!--<span class="selector_title">-->
+				<!--选择学校-->
+			<!--</span>-->
+			<!--<volist name="data" id="vo">-->
+				<!--<li data-school="{$vo.school_id}" data-praise="{$vo.praise}">-->
+					<!--{$vo.school_name}-->
+				<!--</li>-->
+			<!--</volist>-->
+		<!--</ul>-->
+		<!--<div class="charmanLogin">-->
+			<!--<a href="#login" data-transition="flow">主席登陆</a>-->
+		<!--</div>-->
+		<!--<p class="copyright">-->
+			<!--共青团重庆市委学校部 重庆市学生联合会 制-->
+		<!--</p>-->
+	<!--</div>-->
+	<!--<div data-role="page" id="login">-->
+		<!--<div data-role="header" data-position="fixed" id="header">-->
+			<!--<a href="#index" data-transition="turn" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">-->
+				<!--&#xe63c;-->
+			<!--</a>-->
+			<!--<h5>主席登陆</h5>-->
+		<!--</div>-->
+		<!--<div class="login_title">-->
 
-		</div>
-		<ul data-inset="true" data-role="listview" class="usr_input">
-			<li>
-				<i class="iconfont" style="font-size: 16px;margin-left: 3px;display: inline-block">&#xe625;</i>
-				账号
-				<input type="text" id="usrName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的账号" data-role="none"/>
-			</li>
-			<li>
-				<i class="iconfont" style="font-size: 20px;">&#xe61b;</i>
-				密码
-				<input type="password" id="password" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的密码" data-role="none"/>
-			</li>
-		</ul>
-		<div id="loginBtn" data-role="none">
-			登陆
-		</div>
-	</div>
-	<div data-role="page" id="single">
-		<div data-role="header" data-position="fixed" id="singleHeader">
+		<!--</div>-->
+		<!--<ul data-inset="true" data-role="listview" class="usr_input">-->
+			<!--<li>-->
+				<!--<i class="iconfont" style="font-size: 16px;margin-left: 3px;display: inline-block">&#xe625;</i>-->
+				<!--账号-->
+				<!--<input type="text" id="usrName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的账号" data-role="none"/>-->
+			<!--</li>-->
+			<!--<li>-->
+				<!--<i class="iconfont" style="font-size: 20px;">&#xe61b;</i>-->
+				<!--密码-->
+				<!--<input type="password" id="password" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的密码" data-role="none"/>-->
+			<!--</li>-->
+		<!--</ul>-->
+		<!--<div id="loginBtn" data-role="none">-->
+			<!--登陆-->
+		<!--</div>-->
+	<!--</div>-->
+	<!--<div data-role="page" id="single">-->
+		<!--<div data-role="header" data-position="fixed" id="singleHeader">-->
+			<!--<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">-->
+				<!--&#xe63c;-->
+			<!--</a>-->
+			<!--<h1 class="uName"></h1>-->
+		<!--</div>-->
+		<!--<div role="main" class="ui-content">-->
+			<!--<div class="uPhoto">-->
+			<!--</div>-->
+			<!--<p class="uTitle">-->
+				<!--<span class="Tname">-->
+				<!--</span>-->
+				<!--<span class="pray">-->
+					<!--<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>-->
+					<!--赏赞 <span class="prayNum"></span>-->
+				<!--</span>-->
+			<!--</p>-->
+			<!--<div class="intro">-->
+				<!--&nbsp;&nbsp;&nbsp;<span class="uDire"></span><span class="forMore">更多</span>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class="wordsBoard">-->
+			<!--<div class="bigCircle"></div>-->
+			<!--<div class="smallCircle"></div>-->
+			<!--<div class="wordsHolder">-->
+				<!--<h5>留言板</h5>-->
+				<!--<textarea name="" id="" class="wordsInput" data-role="none" placeholder="请在这里输入你的留言..."></textarea>-->
+				<!--<div class="applyBtn">-->
+					<!--提交-->
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="wordsList">-->
+				<!--<a class="perSchool" href="#charman">还想单独勾搭各位主席？<br/>点击这里！</a>-->
+				<!--<ul data-role="listview" data-inset="true" class="List">-->
+					<!--<span class="loadMore">加载更多...</span>-->
+				<!--</ul>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+	<div data-role="page" id="charman">
+		<div data-role="header" data-position="fixed" id="charmanHeader">
 			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
 				&#xe63c;
 			</a>
-			<h1 class="uName"></h1>
+			<h1 class="uName">西南大学</h1>
 		</div>
-		<div role="main" class="ui-content">
-			<div class="uPhoto">
-			</div>
-			<p class="uTitle">
-				<span class="Tname">
-				</span>
-				<span class="pray">
+			<ul data-role="none" class="comment_holder">
+				<li>
+					<div class="cPhoto">
+					</div>
+					<p class="cTitle">
+				<span class="Cname">
+					张一帆
+				</span>&nbsp;
+						<span class="position">西南大学学生会主席</span>
+				<span class="praise">
 					<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>
-					赏赞 <span class="prayNum"></span>
+					赏赞 <span class="praiseNum">1000</span>
 				</span>
-			</p>
-			<div class="intro">
-				&nbsp;&nbsp;&nbsp;<span class="uDire"></span><span class="forMore">更多</span>
-			</div>
-		</div>
+					</p>
+					<div class="cIntro">
+								&nbsp;&nbsp;&nbsp;
+						<span class="cDire">
+							张一帆，男，共青团员，西南大学含弘学院袁隆平班专业，现任西南大学学生会主席。曾被评为西南大学三好学生，荣获国家励志奖学金等。
+						</span>
+					</div>
 		<div class="wordsBoard">
 			<div class="bigCircle"></div>
 			<div class="smallCircle"></div>
@@ -111,17 +156,210 @@
 					提交
 				</div>
 			</div>
-			<div class="wordsList">
-				<a class="perSchool" href="#perSchool">还想单独勾搭各位主席？<br/>点击这里！</a>
-				<ul data-role="listview" data-inset="true" class="List">
-					<span class="loadMore">加载更多...</span>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div data-role="page" id="perSchool">
+			<div class="comment_List">
+				<ul data-role="listview" data-inset="true" class="comment_list">
+					<li>
+						<div class="comment_a">
 
-	</div>
+						</div>
+						<div class="usrBack">
+							<p class="commenter">
+								Lich
+							</p>
+							<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">
+								啊实打实大师大师大师大师对方的闪光点发布范德萨范德萨
+							</div>
+							<br/>
+							<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
+								回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
+							</div>
+						</div>
+						<p class="ui-li-aside comment_date">2014-9-20</p>
+					</li>
+					<li>
+						<div class="comment_a">
+
+						</div>
+						<div class="usrBack">
+							<p class="commenter">
+								Lich
+							</p>
+							<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">
+								啊实打实大师大师大师大师对方的闪光点发布范德萨范德萨
+							</div>
+							<br/>
+							<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
+								回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
+							</div>
+						</div>
+						<p class="ui-li-aside comment_date">2014-9-20</p>
+					</li>
+					<li>
+						<div class="comment_a">
+
+						</div>
+						<div class="usrBack">
+							<p class="commenter">
+								Lich
+							</p>
+							<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">
+								啊实打实大师大师大师大师对方的闪光点发布范德萨范德萨
+							</div>
+							<br/>
+							<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
+								回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
+							</div>
+						</div>
+						<p class="ui-li-aside comment_date">2014-9-20</p>
+					</li>
+				</ul>
+					</div>
+				</div>
+				</li>
+				<li>
+					<div class="cPhoto">
+					</div>
+					<p class="cTitle">
+				<span class="Cname">
+					张一帆
+				</span>&nbsp;
+						<span class="position">西南大学学生会主席</span>
+				<span class="praise">
+					<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>
+					赏赞 <span class="praiseNum">1000</span>
+				</span>
+					</p>
+					<div class="cIntro">
+						&nbsp;&nbsp;&nbsp;
+						<span class="cDire">
+							张一帆，男，共青团员，西南大学含弘学院袁隆平班专业，现任西南大学学生会主席。曾被评为西南大学三好学生，荣获国家励志奖学金等。
+						</span>
+					</div>
+					<div class="wordsBoard">
+						<div class="bigCircle"></div>
+						<div class="smallCircle"></div>
+						<div class="wordsHolder">
+							<h5>留言板</h5>
+							<textarea name="" id="" class="wordsInput" data-role="none" placeholder="请在这里输入你的留言..."></textarea>
+							<div class="applyBtn">
+								提交
+							</div>
+						</div>
+						<div class="comment_List">
+							<ul data-role="listview" data-inset="true" class="comment_list">
+								<li>
+									<div class="comment_a">
+
+									</div>
+									<div class="usrBack">
+										<p class="commenter">
+											Lich
+										</p>
+										<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">
+											啊实打实大师大师大师大师对方的闪光点发布范德萨范德萨
+										</div>
+										<br/>
+										<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
+											回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
+										</div>
+									</div>
+									<p class="ui-li-aside comment_date">2014-9-20</p>
+								</li>
+								<li>
+									<div class="comment_a">
+
+									</div>
+									<div class="usrBack">
+										<p class="commenter">
+											Lich
+										</p>
+										<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">
+											啊实打实大师大师大师大师对方的闪光点发布范德萨范德萨
+										</div>
+										<br/>
+										<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
+											回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
+										</div>
+									</div>
+									<p class="ui-li-aside comment_date">2014-9-20</p>
+								</li>
+								<li>
+									<div class="comment_a">
+
+									</div>
+									<div class="usrBack">
+										<p class="commenter">
+											Lich
+										</p>
+										<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">
+											啊实打实大师大师大师大师对方的闪光点发布范德萨范德萨
+										</div>
+										<br/>
+										<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
+											回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
+										</div>
+									</div>
+									<p class="ui-li-aside comment_date">2014-9-20</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li style="margin-bottom: 0">
+					<div class="cPhoto">
+					</div>
+					<p class="cTitle">
+				<span class="Cname">
+					张一帆
+				</span>&nbsp;
+						<span class="position">西南大学学生会主席</span>
+				<span class="praise">
+					<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>
+					赏赞 <span class="praiseNum">1000</span>
+				</span>
+					</p>
+					<div class="cIntro">
+						&nbsp;&nbsp;&nbsp;
+						<span class="cDire">
+							张一帆，男，共青团员，西南大学含弘学院袁隆平班专业，现任西南大学学生会主席。曾被评为西南大学三好学生，荣获国家励志奖学金等。
+						</span>
+					</div>
+					<div class="wordsBoard">
+						<div class="bigCircle"></div>
+						<div class="smallCircle"></div>
+						<div class="wordsHolder">
+							<h5>留言板</h5>
+							<textarea name="" id="" class="wordsInput" data-role="none" placeholder="请在这里输入你的留言..."></textarea>
+							<div class="applyBtn">
+								提交
+							</div>
+						</div>
+						<div class="comment_List">
+							<ul data-role="listview" data-inset="true" class="comment_list">
+								<li>
+									<div class="comment_a">
+
+									</div>
+									<div class="usrBack">
+										<p class="commenter">
+											Lich
+										</p>
+										<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">
+											啊实打实大师大师大师大师对方的闪光点发布范德萨范德萨
+										</div>
+										<br/>
+										<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">
+											回复：“<span class="reWords">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</span>”
+										</div>
+									</div>
+									<p class="ui-li-aside comment_date">2014-9-20</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 	<div data-role="page" id="commentInfo">
 		<div data-role="header" data-position="fixed" id="commentHeader">
 			<a href="#index" data-transition="flow" data-role="none" class="iconfont backRow" style="color: #fff;font-size: 15px">
@@ -130,28 +368,6 @@
 			<h1>留言回复</h1>
 		</div>
 		<ul data-role="listview" data-inset="true" class="reply_list">
-			<!--<li>-->
-				<!--<div class="touxiang">-->
-
-				<!--</div>-->
-				<!--<div class="usrBack">-->
-					<!--<p class="usrName">相二八</p>-->
-						<!--<div class="words" data-role="none" style="word-wrap:break-word; word-break:break-all;">-->
-							<!--<span class="comment_Content">-->
-								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
-								<!--是是是是是是是是是是是是是是是是是是是是是是是-->
-							<!--</span>-->
-							<!--<br/>-->
-							<!--<br/>-->
-							<!--<input type="text" data-role="none" placeholder="请在这里回复同学们的留言..." class="commentInput">-->
-							<!--<br/>-->
-							<!--<br/>-->
-							<!--<span class="reply">回复</span>-->
-						<!--</div>-->
-				<!--</div>-->
-				<!--<p class="ui-li-aside" class="apply_date">9月16日</p>-->
-				<!--<br/>-->
-			<!--</li>-->
 		</ul>
 	</div>
 </body>

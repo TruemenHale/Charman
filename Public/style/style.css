@@ -409,3 +409,176 @@
   font-size: 14px;
   font-weight: 500;
 }
+#charman {
+  background: #52c6e7;
+}
+#charman .comment_holder {
+  width: 100%;
+}
+#charman .comment_holder > li {
+  margin-bottom: 250px;
+}
+#charman #charmanHeader {
+  background: #0083a9;
+  color: #ffffff;
+  text-shadow: 0 0 1px #44a4c0;
+  font-size: 15px;
+  font-weight: 400;
+  width: auto;
+  text-align: center;
+  border: none;
+}
+#charman .position {
+  font-size: 10px;
+}
+#charman .cPhoto {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 18px;
+  height: 180px;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  box-shadow: 0 0 0 3px #fff;
+}
+#charman .cTitle {
+  display: block;
+  color: #333333;
+  text-shadow: 1px 1px 1px #4a9fb7;
+  overflow: hidden;
+  margin: 10px auto;
+  width: 92%;
+}
+#charman .cTitle .Cname {
+  font-weight: 500;
+  float: left;
+}
+#charman .cTitle .praise {
+  font-size: 10px;
+  float: right;
+  line-height: 20px;
+}
+#charman .cIntro {
+  padding: 15px;
+  background: #a9e3f3;
+  font-size: 12px;
+  width: 88%;
+  margin: 0 auto;
+  color: #333333;
+  text-shadow: 1px 1px 1px #96c8d6;
+  line-height: 20px;
+  font-weight: 300;
+}
+#charman .wordsBoard {
+  width: 100%;
+  height: 500px;
+  margin-top: 18px;
+  position: relative;
+}
+#charman .wordsBoard .bigCircle {
+  background: #ffb850;
+  width: 120%;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+}
+#charman .wordsBoard .smallCircle {
+  background: #f4973c;
+  width: 180%;
+  height: 400px;
+  position: absolute;
+  border-radius: 50%;
+}
+#charman .wordsBoard .wordsHolder {
+  position: absolute;
+  width: 100%;
+  top: 15px;
+  overflow: hidden;
+}
+#charman .wordsBoard .wordsHolder h5 {
+  color: #613d1d;
+  text-align: center;
+  font-size: 13px;
+}
+#charman .wordsBoard .wordsHolder .wordsInput {
+  display: block;
+  width: 88%;
+  border-radius: 0;
+  border: none;
+  margin: 15px auto;
+  overflow: scroll;
+  font-size: 13px;
+  resize: none;
+  padding: 8px;
+  height: 120px;
+  max-height: 120px;
+}
+#charman .wordsBoard .wordsHolder .applyBtn {
+  float: right;
+  font-size: 14px;
+  padding: 5px 18px;
+  color: #fbfa9f;
+  text-align: center;
+  background: #a35d3b;
+  margin-right: 6%;
+}
+#charman .wordsBoard .comment_List {
+  position: absolute;
+  width: 100%;
+  background: #f4973c;
+  height: auto;
+  min-height: 250px;
+  top: 225px;
+  padding-bottom: 30px;
+}
+#charman .wordsBoard .comment_List .perSchool {
+  display: inline-block;
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 12px;
+  color: #ffffff;
+}
+#charman .wordsBoard .comment_List ul {
+  display: block;
+  margin: 5px auto;
+  width: 92%;
+  border-radius: 0;
+}
+#charman .wordsBoard .comment_List ul li {
+  color: #999999;
+}
+#charman .wordsBoard .comment_List ul li .comment_a {
+  width: 50px;
+  height: 50px;
+  background: #ff0000;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -ms-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  border-radius: 50%;
+  float: left;
+  overflow: hidden;
+}
+#charman .wordsBoard .comment_List ul li .commenter {
+  color: #363636;
+}
+#charman .wordsBoard .comment_List ul li .usrBack {
+  width: 75%;
+  float: left;
+  margin-left: 15px;
+  word-wrap: break-word;
+}
+#charman .wordsBoard .comment_List ul li .words_content {
+  width: 100%;
+  white-space: normal;
+  font-size: 13px;
+}
+#charman .wordsBoard .comment_List ul li .reply_content {
+  width: 100%;
+  font-size: 11px;
+}
