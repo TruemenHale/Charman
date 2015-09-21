@@ -502,7 +502,7 @@
   text-align: center;
   font-size: 13px;
 }
-#charman .wordsBoard .wordsHolder .wordsInput {
+#charman .wordsBoard .wordsHolder .wordsContent {
   display: block;
   width: 88%;
   border-radius: 0;
@@ -515,7 +515,7 @@
   height: 120px;
   max-height: 120px;
 }
-#charman .wordsBoard .wordsHolder .applyBtn {
+#charman .wordsBoard .wordsHolder .applyChairman {
   float: right;
   font-size: 14px;
   padding: 5px 18px;
