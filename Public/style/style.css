@@ -328,9 +328,10 @@
   width: 100%;
   font-size: 11px;
 }
-#single .wordsBoard .wordsList ul .loadMore {
-  display: inline-block;
-  width: 100%;
+#single .wordsBoard .wordsList .loadMore {
+  display: block;
+  width: 92%;
+  margin: 0 auto;
   height: 40px;
   font-size: 11px;
   background: #ffffff;
