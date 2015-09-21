@@ -2,7 +2,15 @@
  * Created by truemenhale on 15/9/15.
  */
 function pageView(data,name,school_id,a){
+	var oBack = $('.backIndex');
 	var img = new Image();
+	oBack.on('tap',function(){
+		var list = $('.List');
+		list.html("");
+		$.changePage('#index',{
+			transition:'flow'
+		});
+	});
 	img.src = data.school_pic;
 	img.onload = function(){
 		img.onload = null;

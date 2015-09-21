@@ -5,6 +5,13 @@ function viewChariman(data){
 	var list = $('.comment_holder');
 	var arr_ = [];
 	var cBox = [];
+	var oBack = $('.backSingle');
+	oBack.on('tap',function(){
+		list.html("");
+		$.changePage('#single',{
+			transition:'flow'
+		});
+	});
 	for(var i = 0;i<data.length;i++){
 		var _html = '<li>'+
 			'<div class="cPhoto" style="background-image: url("'+data[i].pic+'")">'+
