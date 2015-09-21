@@ -4,7 +4,6 @@
 function viewChariman(data){
 	var list = $('.comment_holder');
 	var arr_ = [];
-	var _arr = [];
 	var cBox = [];
 	for(var i = 0;i<data.length;i++){
 		var _html = '<li>'+
@@ -43,6 +42,7 @@ function viewChariman(data){
 		'</li>'
 		arr_.push(_html);
 		for(var j = 0;j < data[i].comment.length;j++){
+			var _arr = [];
 			var html_ =
 				'<li>'+
 				'<div class="comment_a" style="background-image: url("'+data[i].comment[j].avatar+'")">'+
@@ -73,6 +73,11 @@ function viewChariman(data){
 	for(var i = 0;i < cBox.length;i++){
 		aCommentList.eq(i).html(cBox[i].join(""));
 	}
+	var oP = $('#charman');
+	var oBigC = oP.find('.bigCircle');
+	var oSmallC = oP.find('.smallCircle');
+	oBigC.css({"left":-$(window).width()*0.1});
+	oSmallC.css({"left":-$(window).width()*0.4});
 	$.mobile.changePage('#charman',{
 		transition:'flow'
 	})
