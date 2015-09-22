@@ -18,4 +18,20 @@ class IndexController extends Controller {
             'father_id' => 0
         ]);
     }
+    public function ripage() {
+        $school = M('school')->select();
+        $this->assign('school', $school);
+        $this->display();
+    }
+    public function ri() {
+        $data = I('post.');
+        foreach($data as $v) {
+            if(empty($v)) {
+                $this->error('no!');
+            }
+        }
+        $data['praise'] = 0;
+        M('president')->add($data);
+        $this->success('ok');
+    }
 }

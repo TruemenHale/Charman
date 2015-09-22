@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="{:U('Index/ri')}" method="post">
+    <input type="text" name="president" placeholder="姓名">
+    <select name="school_id">
+        <volist name="school" id="v">
+            <option value="{$v.id}">{$v.school_name}</option>
+        </volist>
+    </select>
+    <input type="text" name="introduce" placeholder="介绍">
+    <input type="text" name="posization" placeholder="职位">
+    <input type="submit">
+</form>
+</body>
+</html>
