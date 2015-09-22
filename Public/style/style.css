@@ -346,6 +346,11 @@
   margin: 8px auto;
   width: 100%;
 }
+#commentInfo ul p {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
 #commentInfo ul li {
   position: relative;
   color: #999999;

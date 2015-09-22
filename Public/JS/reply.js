@@ -3,36 +3,60 @@
  */
 var reply_token = true;
 function replyView(data){
+	var list = $('.reply_list');
+	list.html("<p>主席团</p>");
+	var c = list.html();
 	$.mobile.changePage('#commentInfo',{
 		transition:'flow'
 	});
-	var list = $('.reply_list');
 	var _arr = [];
-	for(var i = 0;i < data.length;i++){
+	for(var i = 0;i < data.all.length;i++){
 		var _html =
 			'<li>'+
-				'<div class="touxiang" '+'style = "background-image: '+'url("'+data[i].avatar+'")">'+
+				'<div class="touxiang" '+'style = "background-image: '+'url("'+data.all[i].avatar+'")">'+
 				'</div>'+
 				'<div class="usrBack">'+
-					'<p class="usrName">'+data[i].nickname+'</p>'+
+					'<p class="usrName">'+data.all[i].nickname+'</p>'+
 					'<div class="words" data-role="none" style="word-wrap:break-word; word-break:break-all;">'+
-						'<span class="comment_Content">'+
-						+data[i].content+
+						'<span class="comment_Content">'+data.all[i].content+
 						'</span>'+
 						'<br/>'+
 						'<br/>'+
 						'<input type="text" data-role="none" placeholder="请在这里回复同学们的留言..." class="commentInput">'+
 						'<br/>'+
 						'<br/>'+
-						'<span class="reply"  comment_id="'+data[i].comment_id+'" >回复</span>'+
+						'<span class="reply"  comment_id="'+data.all[i].comment_id+'" >回复</span>'+
 			        '</div>'+
 				'</div>'+
-			'<p class="ui-li-aside" class="apply_date">'+data[i].time+'</p>'+
+			'<p class="ui-li-aside" class="apply_date">'+data.all[i].time+'</p>'+
 			'</li>';
 		_arr.push(_html);
 	}
-	list.html(_arr.join(""));
-	list.listview('refresh');
+	var arr_ = [];
+	for(var i = 0 ; i < data.seduce.length ; i++){
+		var html_ = '<p>'+data.seduce[i].president_name+'</p>'+
+			'<li>'+
+			'<div class="touxiang" '+'style = "background-image: '+'url("'+data.seduce[i].avatar+'")">'+
+			'</div>'+
+			'<div class="usrBack">'+
+			'<p class="usrName">'+data.seduce[i].nickname+'</p>'+
+			'<div class="words" data-role="none" style="word-wrap:break-word; word-break:break-all;">'+
+			'<span class="comment_Content">'+data.seduce[i].content+
+			'</span>'+
+			'<br/>'+
+			'<br/>'+
+			'<input type="text" data-role="none" placeholder="请在这里回复同学们的留言..." class="commentInput">'+
+			'<br/>'+
+			'<br/>'+
+			'<span class="reply"  comment_id="'+data.seduce[i].comment_id+'" >回复</span>'+
+			'</div>'+
+			'</div>'+
+			'<p class="ui-li-aside" class="apply_date">'+data.seduce[i].time+'</p>'+
+			'</li>';
+		arr_.push(html_);
+	}
+	list.html(c+_arr.join("")+arr_.join(""));
+	list.listview('refresh');ΩΩ
 	var aReplyBtn = $('.reply');
 	aReplyBtn.on('tap',function(){
 		if(reply_token){
