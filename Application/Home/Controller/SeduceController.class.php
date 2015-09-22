@@ -34,7 +34,7 @@ class SeduceController extends Controller {
     public function comment() {
         $content = I('post.content');
         $president_id = I('post.president_id');
-        if($content == '' || is_numeric($president_id)) {
+        if($content == '' || !is_numeric($president_id)) {
             $this->ajaxReturn([
                 'status' => 403,
                 'info'   => '参数错误'
@@ -49,6 +49,36 @@ class SeduceController extends Controller {
             'status'  => 0
         ];
         M('user_president')->add($data);
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功'
+        ]);
+    }
+
+    //点赞
+    public function praise() {
+        $president_id = I('post.president_id');
+        if($president_id == '') {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '数据错误'
+            ]);
+        }
+        $time = date('Y-m-d', time());
+        $map = [
+            'user_id' => session('uid'),
+            'president_id' => $president_id,
+            'time' => $time
+        ];
+        $praise = M('president_praise');
+        if($praise->where($map)->count()) {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '您今天已赞过主席'
+            ]);
+        }
+        $praise->add($map);
+        M('president')->where(['id' => $president_id])->setInc('praise');
         $this->ajaxReturn([
             'status' => 200,
             'info'   => '成功'
