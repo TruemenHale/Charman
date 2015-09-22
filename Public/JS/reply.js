@@ -4,7 +4,7 @@
 var reply_token = true;
 function replyView(data){
 	var list = $('.reply_list');
-	list.html("<p>主席团</p>");
+	list.html("<p class='chairman_title'>主席团</p>");
 	var c = list.html();
 	$.mobile.changePage('#commentInfo',{
 		transition:'flow'
@@ -34,7 +34,7 @@ function replyView(data){
 	}
 	var arr_ = [];
 	for(var i = 0 ; i < data.seduce.length ; i++){
-		var html_ = '<p>'+data.seduce[i].president_name+'</p>'+
+		var html_ = '<p class="chairman_title">'+data.seduce[i].president_name+'</p>'+
 			'<li>'+
 			'<div class="touxiang" '+'style = "background-image: '+'url("'+data.seduce[i].avatar+'")">'+
 			'</div>'+
@@ -56,7 +56,7 @@ function replyView(data){
 		arr_.push(html_);
 	}
 	list.html(c+_arr.join("")+arr_.join(""));
-	list.listview('refresh');ΩΩ
+	list.listview('refresh');
 	var aReplyBtn = $('.reply');
 	aReplyBtn.on('tap',function(){
 		if(reply_token){
