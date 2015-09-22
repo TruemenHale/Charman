@@ -6,7 +6,7 @@ class SeduceController extends Controller {
     //勾搭首页
     public function index() {
         $school_id = I('post.school_id');
-        $data = M('president')->where(['school_id' => $school_id])->field('id as president_id, introduce, pic, posization, praise')->select();
+        $data = M('president')->where(['school_id' => $school_id])->field('id as president_id, president, introduce, pic, posization, praise')->select();
         $comment = M('user_president');
         foreach ($data as &$v) {
             $v['comment'] = $comment
@@ -19,7 +19,7 @@ class SeduceController extends Controller {
                 $va['reply'] = $comment
                     ->where(['status' => 1, 'president_id' => 0, 'father_id' => $va['comment_id']])
                     ->field('user_president.content, user_president.time')
-                    ->select();
+                    ->find();
             }
 
         }
