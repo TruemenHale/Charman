@@ -54,4 +54,34 @@ class SeduceController extends Controller {
             'info'   => '成功'
         ]);
     }
+
+    //点赞
+    public function praise() {
+        $president_id = I('post.president_id');
+        if($president_id == '') {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '数据错误'
+            ]);
+        }
+        $time = date('Y-m-d', time());
+        $map = [
+            'user_id' => session('uid'),
+            'president_id' => $president_id,
+            'time' => $time
+        ];
+        $praise = M('president_praise');
+        if($praise->where($map)->count()) {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '您今天已赞过主席'
+            ]);
+        }
+        $praise->add($map);
+        M('president')->where(['id' => $president_id])->setInc('praise');
+        $this->ajaxReturn([
+            'status' => 200,
+            'info'   => '成功'
+        ]);
+    }
 }

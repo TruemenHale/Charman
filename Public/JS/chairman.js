@@ -22,7 +22,7 @@ function viewChariman(data){
 				data[i].president+
 			'</span>&nbsp;'+
 	'<span class="position">'+data[i].posization+'</span>'+
-		'<span class="praise">'+
+		'<span class="praise" id-praise="'+data[i].president_id+'">'+
 		'<i style="font-family: iconfont;color: #ff5148;font-size: 16px;margin-right: 5px">&#xe6d1;</i>赏赞'+ '<span class="praiseNum">'+data[i].praise+'</span>'+
 		'</span>'+
 		'</p>'+
@@ -104,6 +104,14 @@ function viewChariman(data){
 				}
 			})
 		}
+	});
+	$('.praise').on('tap',function(){
+		var _this = $(this);
+		var _data = {};
+		_data.president_id = _this.attr('id-praise');
+		$.post(praise_chairman,_data,function(data){
+			alert(data.info)
+		});
 	});
 	$.mobile.changePage('#charman',{
 		transition:'flow'
