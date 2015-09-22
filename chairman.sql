@@ -11,7 +11,7 @@
  Target Server Version : 50624
  File Encoding         : utf-8
 
- Date: 09/22/2015 14:41:11 PM
+ Date: 09/22/2015 17:27:47 PM
 */
 
 SET NAMES utf8;
@@ -30,13 +30,13 @@ CREATE TABLE `comment` (
   `time` date DEFAULT NULL,
   `father_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Records of `comment`
 -- ----------------------------
 BEGIN;
-INSERT INTO `comment` VALUES ('1', 'sbzlb', '1', '1', '1', '2015-09-17', '0'), ('2', 'yes', '2', '1', '1', '2015-09-17', '1'), ('3', '321', '1', '1', '1', '2015-09-20', '0'), ('5', 'asdf', '2', '1', '1', '2015-09-20', '3'), ('6', '123', '2', '1', '1', '2015-09-20', '3');
+INSERT INTO `comment` VALUES ('1', 'sbzlb', '1', '1', '0', '2015-09-17', '0'), ('2', 'yes', '2', '1', '1', '2015-09-17', '1'), ('3', '321', '1', '1', '0', '2015-09-20', '0'), ('5', 'asdf', '2', '1', '1', '2015-09-20', '3'), ('6', '123', '2', '1', '1', '2015-09-20', '3'), ('7', 'dsfas', '1', '1', '0', '2015-09-22', '0'), ('8', 'dfg', '1', '1', '0', '2015-09-22', '0'), ('9', 'sbsbs', '1', '1', '0', '2015-09-22', '0'), ('10', 'asd', '1', '1', '1', '2015-09-22', '7'), ('11', 'sdc', '1', '1', '1', '2015-09-22', '8'), ('12', 'go', '1', '1', '1', '2015-09-22', '9');
 COMMIT;
 
 -- ----------------------------
@@ -58,7 +58,7 @@ CREATE TABLE `president` (
 --  Records of `president`
 -- ----------------------------
 BEGIN;
-INSERT INTO `president` VALUES ('1', 'sb', '1', 'asdf', 'asdf', '12', 'sb'), ('2', 'zlb', '1', 'adsf', 'fvasd', '23', 'bb');
+INSERT INTO `president` VALUES ('1', 'sb', '1', 'asdf', 'asdf', '14', 'sb'), ('2', 'zlb', '1', 'adsf', 'fvasd', '23', 'bb');
 COMMIT;
 
 -- ----------------------------
@@ -69,9 +69,16 @@ CREATE TABLE `president_praise` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `time` date DEFAULT NULL,
-  `school_id` int(11) DEFAULT NULL,
+  `president_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+--  Records of `president_praise`
+-- ----------------------------
+BEGIN;
+INSERT INTO `president_praise` VALUES ('1', null, '2015-09-22', '1'), ('2', null, '2015-09-22', '1');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `role`
@@ -134,14 +141,15 @@ CREATE TABLE `user_president` (
   `president_id` int(11) DEFAULT NULL,
   `father_id` int(11) DEFAULT NULL,
   `status` int(11) DEFAULT '0',
+  `school_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 --  Records of `user_president`
 -- ----------------------------
 BEGIN;
-INSERT INTO `user_president` VALUES ('1', '1', 'e', '2015-09-21', '1', '0', '1'), ('2', '1', 'd', '2015-09-21', '0', '1', '1'), ('3', '2', '34', null, '2', '0', '1'), ('4', '2', '234', null, '0', '3', '1');
+INSERT INTO `user_president` VALUES ('1', '1', 'e', '2015-09-21', '1', '0', '0', '1'), ('2', '1', 'd', '2015-09-21', '0', '1', '1', '1'), ('3', '2', '34', null, '2', '0', '0', '1'), ('4', '2', '234', null, '0', '3', '1', '1'), ('5', '1', 'adf', '2015-09-22', '2', '0', '0', '1');
 COMMIT;
 
 -- ----------------------------
