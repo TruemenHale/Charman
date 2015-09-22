@@ -5,7 +5,7 @@ class PresidentBaseController extends Controller {
     public function _initialize(){
         if(!session('president_id')) {
             $this->ajaxReturn([
-                'status' => 200,
+                'status' => 403,
                 'info'   => '请先登录',
             ]);
         }
