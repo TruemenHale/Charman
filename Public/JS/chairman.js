@@ -43,7 +43,7 @@ function viewChariman(data){
 		'</div>'+
 		'</div>'+
 		'<div class="comment_List">'+
-		'<ul data-role="listview" data-inset="true" class="comment_list">'+
+		'<ul data-role="listview" data-inset="true" class="comment_ul">'+
 		'</ul>'+
 		'</div>'+
 		'</div>'+
@@ -75,7 +75,7 @@ function viewChariman(data){
 	}
 	console.log(cBox.length);
 	list.html(arr_.join(""));
-	var aCommentList = $('.comment_list');
+	var aCommentList = $('.comment_ul');
 	for(var i = 0;i < cBox.length;i++){
 		aCommentList.eq(i).html(cBox[i].join(""));
 		aCommentList.eq(i).listview('refresh');
