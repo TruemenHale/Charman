@@ -90,12 +90,14 @@ function viewChariman(data){
 			var _this = $(this);
 			$.mobile.loading('show');
 			var _data = {};
+			var _input = _this.prev();
 			_data.president_id = _this.attr('apply-id');
-			_data.content = _this.prev().val();
+			_data.content = _input.val();
 			$.post(apply_chairman,_data,function(data){
 				$.mobile.loading('hide');
 				applyChairman_token = true;
 				if(data.status == 200){
+					_input.val("");
 					alert('留言成功，主席大大会按时查看并回复！')
 				}else{
 					alert(data.info);
