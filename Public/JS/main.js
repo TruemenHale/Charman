@@ -19,7 +19,7 @@ $(function(){
 	var oSmallC = $('.smallCircle');
 	var oBack = $('.backIndex');
 	oBack.on('tap',function(){
-		var list = $('.List');
+		var list = $('#List');
 		list.html("");
 		$.mobile.changePage('#index',{
 			transition:'flow'
