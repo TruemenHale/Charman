@@ -23,7 +23,7 @@ function viewChariman(data){
 			'</span>&nbsp;'+
 	'<span class="position">'+data[i].posization+'</span>'+
 		'<span class="praise">'+
-		'<i style="font-family: iconfont;color: #ff5148;font-size: 16px">&#xe6d1;</i>赏赞'+ '<span class="praiseNum">'+data[i].praise+'</span>'+
+		'<i style="font-family: iconfont;color: #ff5148;font-size: 16px;margin-right: 5px">&#xe6d1;</i>赏赞'+ '<span class="praiseNum">'+data[i].praise+'</span>'+
 		'</span>'+
 		'</p>'+
 		'<div class="cIntro">'+
@@ -43,7 +43,7 @@ function viewChariman(data){
 		'</div>'+
 		'</div>'+
 		'<div class="comment_List">'+
-		'<ul data-role="listview" data-inset="true" class="comment_ul">'+
+		'<ul class="comment_ul">'+
 		'</ul>'+
 		'</div>'+
 		'</div>'+
@@ -68,16 +68,13 @@ function viewChariman(data){
 				'回复：“<span class="reWords">'+data[i].comment[j].reply.content+'</span>”'+
 				'</div>'+
 				'</div>'+
-				'<p class="ui-li-aside comment_date">'+data[i].comment[j].time+'</p>'+
+				'<p class="comment_date">'+data[i].comment[j].time+'</p>'+
 				'</li>';
+			_arr.push(html_);
 		}
 		cBox.push(_arr);
 	}
 	list.html(arr_.join(""));
-	var aCommentList = $('.comment_ul');
-	for(var i = 0;i < cBox.length;i++){
-		aCommentList.eq(i).html(cBox[i].join(""));
-	}
 	var oP = $('#charman');
 	var oBigC = oP.find('.bigCircle');
 	var oSmallC = oP.find('.smallCircle');
@@ -102,7 +99,11 @@ function viewChariman(data){
 			})
 		}
 	});
+	var aComment = $('.comment_ul');
+	for(var i = 0;i < cBox.length;i++){
+		aComment.eq(i).html(cBox[i].join(""));
+	}
 	$.mobile.changePage('#charman',{
 		transition:'flow'
-	})
+	});
 }

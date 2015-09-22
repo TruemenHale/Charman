@@ -2,15 +2,7 @@
  * Created by truemenhale on 15/9/15.
  */
 function pageView(data,name,school_id,a){
-	var oBack = $('.backIndex');
 	var img = new Image();
-	oBack.on('tap',function(){
-		var list = $('.List');
-		list.html(" ");
-		$.mobile.changePage('#index',{
-			transition:'flow'
-		});
-	});
 	img.src = data.school_pic;
 	img.onload = function(){
 		img.onload = null;
@@ -34,19 +26,25 @@ function pageView(data,name,school_id,a){
 			}
 		});
 	});
-	if(comment_token){
-		comment_token = false;
 		$('.loadMore').on('tap',function(){
-			a.page++;
-			$.post(get_comment,a,function(data){
-				commentView(data.data);
-				comment_token = true;
-			});
+			if(comment_token){
+				$.mobile.loading('show');
+				comment_token = false;
+				a.page++;
+				$.post(get_comment,a,function(data){
+					$.mobile.loading('hide');
+					if(data.status == 200){
+						commentView(data.data);
+					}
+					else{
+						alert(data.info)
+					}
+					comment_token = true;
+				});
+			}else{
+				return false;
+			}
 		});
-	}
-	else{
-		return false;
-	}
 	$('.applyBtn').on('tap',function(){
 		var words = {};
 		$.mobile.loading('show');
@@ -64,7 +62,7 @@ function pageView(data,name,school_id,a){
 	$.mobile.loading('hide');
 }
 function commentView(data){
-	var list = $('.List');
+	var list = $('#List');
 	var b = list.html();
 	var _arr = [];
 	if(data.length != 0){

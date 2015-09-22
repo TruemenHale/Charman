@@ -4,12 +4,27 @@
 var page_token = true;
 var comment_token = true;
 var chairman_token = true;
+$("document").on("pageshow","#charman",function(){
+	var aUl = $('.comment_ul');
+	console.log(1);
+	for(var i = 0 ; i < aUl.length;i++){
+		aUl.eq(i).listview('refresh');
+	}
+});
 $(function(){
 	var oMask = $('.mask');
 	var oSelector = $('.schoolSelector');
 	var aSeBox = $('.schoolSelector li');
 	var oBigC = $('.bigCircle');
 	var oSmallC = $('.smallCircle');
+	var oBack = $('.backIndex');
+	oBack.on('tap',function(){
+		var list = $('.List');
+		list.html("");
+		$.mobile.changePage('#index',{
+			transition:'flow'
+		});
+	});
 	$.mobile.loading('show');
 	var img = new Image();
 	img.src = "Public/images/index_back.jpg";
