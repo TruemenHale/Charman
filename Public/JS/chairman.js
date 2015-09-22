@@ -70,9 +70,7 @@ function viewChariman(data){
 				'</div>'+
 				'<p class="ui-li-aside comment_date">'+data[i].comment[j].time+'</p>'+
 				'</li>';
-				_arr.push(html_);
 		}
-		console.log(_arr);
 		cBox.push(_arr);
 	}
 	console.log(cBox.length);
@@ -80,8 +78,8 @@ function viewChariman(data){
 	var aCommentList = $('.comment_list');
 	for(var i = 0;i < cBox.length;i++){
 		aCommentList.eq(i).html(cBox[i].join(""));
+		aCommentList.eq(i).listview('refresh');
 	}
-	aCommentList.listview('refresh');
 	var oP = $('#charman');
 	var oBigC = oP.find('.bigCircle');
 	var oSmallC = oP.find('.smallCircle');
@@ -94,6 +92,7 @@ function viewChariman(data){
 			$.mobile.loading('show');
 			var _data = {};
 			_data.president_id = _this.attr('apply-id');
+			_data.content = _this.sibling('.wordsContent').val();
 			$.post(apply_chairman,_data,function(data){
 				$.mobile.loading('hide');
 				applyChairman_token = true;
