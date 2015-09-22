@@ -1,13 +1,14 @@
 /**
  * Created by truemenhale on 15/9/21.
  */
+var applyChairman_token = true;
 function viewChariman(data){
 	var list = $('.comment_holder');
 	var arr_ = [];
 	var cBox = [];
 	var oBack = $('.backSingle');
 	oBack.on('tap',function(){
-		list.html("");
+		list.html(" ");
 		$.mobile.changePage('#single',{
 			transition:'flow'
 		});
@@ -80,28 +81,31 @@ function viewChariman(data){
 	for(var i = 0;i < cBox.length;i++){
 		aCommentList.eq(i).html(cBox[i].join(""));
 	}
+	aCommentList.listview('refresh');
 	var oP = $('#charman');
 	var oBigC = oP.find('.bigCircle');
 	var oSmallC = oP.find('.smallCircle');
 	oBigC.css({"left":-$(window).width()*0.1});
 	oSmallC.css({"left":-$(window).width()*0.4});
+	$('.applyChairman').on('tap',function(){
+		if(applyChairman_token){
+			applyChairman_token = false;
+			var _this = $(this);
+			$.mobile.loading('show');
+			var _data = {};
+			_data.president_id = _this.attr('apply-id');
+			$.post(apply_chairman,_data,function(data){
+				$.mobile.loading('hide');
+				applyChairman_token = true;
+				if(data.status == 200){
+					alert('留言成功，主席大大会按时查看并回复！')
+				}else{
+					alert(data.info);
+				}
+			})
+		}
+	});
 	$.mobile.changePage('#charman',{
 		transition:'flow'
 	})
 }
-//'<li>'+
-//'<div class="comment_a">'+
-//
-//'</div>'+
-//'<div class="usrBack">'+
-//'<p class="commenter">'+
-//'</p>'+
-//'<div class="words_content" data-role="none" style="word-wrap:break-word; word-break:break-all;">'+
-//'</div>'+
-//'<br/>'+
-//'<div class="reply_content" style="word-wrap:break-word; word-break:break-all;white-space: normal;">'+
-//'回复：“<span class="reWords">'+'</span>”'+
-//'</div>'+
-//'</div>'+
-//'<p class="ui-li-aside comment_date">'+'</p>'+
-//'</li>'+

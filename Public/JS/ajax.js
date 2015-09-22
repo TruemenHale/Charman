@@ -6,7 +6,7 @@ function pageView(data,name,school_id,a){
 	var img = new Image();
 	oBack.on('tap',function(){
 		var list = $('.List');
-		list.html("");
+		list.html(" ");
 		$.mobile.changePage('#index',{
 			transition:'flow'
 		});
