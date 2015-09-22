@@ -4,11 +4,12 @@ use Think\Controller;
 class PresidentController extends PresidentBaseController {
     //查看未回复留言
     public function index(){
-        $data = M('comment')->where(['status' => 0, 'comment.school_id' => session('school_id')])
+        $data['all'] = M('comment')->where(['status' => 0, 'comment.school_id' => session('school_id')])
                             ->join('join users on comment.user_id = users.id')
                             ->order('comment.time desc')
                             ->field('user_id as uid, users.nickname, users.avatar, comment.id as comment_id, comment.content, time, father_id')
                             ->select();
+        $data['seduce'] = $this->seduceIndex();
         $this->ajaxReturn([
             'status' => 200,
             'info'   => '成功',
@@ -18,16 +19,12 @@ class PresidentController extends PresidentBaseController {
 
     //查看未回复勾搭
     public function seduceIndex(){
-        $data = M('user_president')->where(['status' => 0, 'user_president.school_id' => session('school_id')])
-            ->join('join users on user_president.user_id = users.id')
-            ->order('user_president.time desc')
-            ->field('user_id as uid, users.nickname, users.avatar, user_president.id as comment_id, user_president.content, time')
-            ->select();
-        $this->ajaxReturn([
-            'status' => 200,
-            'info'   => '成功',
-            'data'   => $data
-        ]);
+        return $data = M('user_president')->where(['status' => 0, 'user_president.school_id' => session('school_id')])
+                        ->join('join users on user_president.user_id = users.id')
+                        ->join('join president on user_president.president_id = president.id')
+                        ->order('user_president.time desc')
+                        ->field('president.president as president_name, user_id as uid, users.nickname, users.avatar, user_president.id as comment_id, user_president.content, time')
+                        ->select();
     }
 
     //回复勾搭
@@ -39,10 +36,13 @@ class PresidentController extends PresidentBaseController {
             'content' => $content,
             'time'    => date('Y-m-d', time()),
             'president_id' => 0,
+            'school_id' => session('school_id'),
             'father_id' => $comment_id,
-            'status'  => 0
+            'status'  => 1
         ];
-        M('user_president')->add($data);
+        $user_president = M('user_president');
+        $user_president->where(['id' => $comment_id])->save(['status' => 1]);
+        $user_president->add($data);
         $this->ajaxReturn([
             'status' => 200,
             'info'   => '成功'
