@@ -16,17 +16,14 @@ function pageView(data,name,school_id,a){
 	$('.Tname').html(tName);
 	$('.prayNum').html(data.school_praise);
 	$('.uDire').html(data.school_introduce);
-	$('.pray').on('tap',function(school_id){
-		$.post(praise_path,school_id,function(data){
-			if(data.status == 200){
-				alert('赏赞成功！谢谢支持！');
-			}
-			else{
-				alert(data.info);
-			}
+	$('.pray').on('tap',function(){
+		var _data = {};
+		_data.school_id = school_id;
+		$.post(praise_path,_data,function(data){
+			alert(data.info);
 		});
 	});
-		$('.loadMore').on('tap',function(){
+	$('.loadMore').on('tap',function(){
 			if(comment_token){
 				$.mobile.loading('show');
 				comment_token = false;

@@ -75,6 +75,10 @@ function viewChariman(data){
 		cBox.push(_arr);
 	}
 	list.html(arr_.join(""));
+	var aComment = $('.comment_ul');
+	for(var i = 0;i < cBox.length;i++){
+		aComment.eq(i).html(cBox[i].join(""));
+	}
 	var oP = $('#charman');
 	var oBigC = oP.find('.bigCircle');
 	var oSmallC = oP.find('.smallCircle');
@@ -87,7 +91,7 @@ function viewChariman(data){
 			$.mobile.loading('show');
 			var _data = {};
 			_data.president_id = _this.attr('apply-id');
-			_data.content = _this.sibling('.wordsContent').val();
+			_data.content = _this.prev().val();
 			$.post(apply_chairman,_data,function(data){
 				$.mobile.loading('hide');
 				applyChairman_token = true;
@@ -99,10 +103,6 @@ function viewChariman(data){
 			})
 		}
 	});
-	var aComment = $('.comment_ul');
-	for(var i = 0;i < cBox.length;i++){
-		aComment.eq(i).html(cBox[i].join(""));
-	}
 	$.mobile.changePage('#charman',{
 		transition:'flow'
 	});
