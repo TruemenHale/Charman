@@ -34,6 +34,7 @@ class SeduceController extends Controller {
     public function comment() {
         $content = I('post.content');
         $president_id = I('post.president_id');
+        $school_id = M('president')->where(['id' => $president_id])->getField('school_id');
         if($content == '' || !is_numeric($president_id)) {
             $this->ajaxReturn([
                 'status' => 403,
@@ -45,6 +46,7 @@ class SeduceController extends Controller {
             'content' => $content,
             'time'    => date('Y-m-d', time()),
             'president_id' => $president_id,
+            'school_id' => $school_id,
             'father_id' => 0,
             'status'  => 0
         ];
