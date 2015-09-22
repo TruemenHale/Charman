@@ -73,12 +73,10 @@ function viewChariman(data){
 		}
 		cBox.push(_arr);
 	}
-	console.log(cBox.length);
 	list.html(arr_.join(""));
 	var aCommentList = $('.comment_ul');
 	for(var i = 0;i < cBox.length;i++){
 		aCommentList.eq(i).html(cBox[i].join(""));
-		aCommentList.eq(i).listview('refresh');
 	}
 	var oP = $('#charman');
 	var oBigC = oP.find('.bigCircle');
