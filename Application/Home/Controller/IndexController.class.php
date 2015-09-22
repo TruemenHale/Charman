@@ -7,4 +7,7 @@ class IndexController extends Controller {
         $this->assign('data', $data);
         $this->display();
     }
+    public function test() {
+        echo 'gg';
+    }
 }
