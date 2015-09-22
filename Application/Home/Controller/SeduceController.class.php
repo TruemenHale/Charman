@@ -34,7 +34,7 @@ class SeduceController extends Controller {
     public function comment() {
         $content = I('post.content');
         $president_id = I('post.president_id');
-        if($content == '' || is_numeric($president_id)) {
+        if($content == '' || !is_numeric($president_id)) {
             $this->ajaxReturn([
                 'status' => 403,
                 'info'   => '参数错误'
