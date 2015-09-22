@@ -49,8 +49,8 @@ function viewChariman(data){
 		'</div>'+
 		'</li>'
 		arr_.push(_html);
+		var _arr = [];
 		for(var j = 0;j < data[i].comment.length;j++){
-			var _arr = [];
 			var html_ =
 				'<li>'+
 				'<div class="comment_a" style="background-image: url("'+data[i].comment[j].avatar+'")">'+
@@ -72,7 +72,10 @@ function viewChariman(data){
 				'</li>';
 			_arr.push(html_);
 		}
-		cBox.push(_arr);
+		if(_arr.length){
+			cBox.push(_arr);
+			_arr = null;
+		}
 	}
 	list.html(arr_.join(""));
 	var aComment = $('.comment_ul');
