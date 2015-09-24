@@ -32,14 +32,14 @@ class DataController extends Controller {
 
     public function getSchool() {
         $input = I('post.');
-//        $setting=C('UPLOAD_SITEIMG_QINIU');
-//        $Upload = new \Think\Upload($setting);
-//        $info = $Upload->upload();
-//        if(!$info) {
-//            var_dump($Upload->getError());
-//            $this->error('上传失败');
-//        }
-//        $data['school_pic'] = $info['pic']['url'].'-tinyq30';
+        $setting=C('UPLOAD_SITEIMG_QINIU');
+        $Upload = new \Think\Upload($setting);
+        $info = $Upload->upload();
+        if(!$info) {
+            var_dump($Upload->getError());
+            $this->error('上传失败');
+        }
+        $data['school_pic'] = $info['pic']['url'].'-tinyq30';
         $data['school_introduce'] = $input['school_introduce'];
         $data['praise'] = 0;
         M('school')->where(['id' => $input['school_id']])->save($data);
