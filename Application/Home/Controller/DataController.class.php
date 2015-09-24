@@ -14,8 +14,10 @@ class DataController extends Controller {
         $setting=C('UPLOAD_SITEIMG_QINIU');
         $Upload = new \Think\Upload($setting);
         $info = $Upload->upload();
-        var_dump($info);
-        return;
+        if(!$info) {
+            $Upload->getError();
+            $this->error('上传失败');
+        }
         $data['pic'] = $info['pic']['url'].'-tinyq30';
         $data['praise'] = 0;
         M('president')->add($data);
