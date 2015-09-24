@@ -22,7 +22,7 @@ class DataController extends Controller {
         $info = $Upload->upload();
         if(!$info) {
             var_dump($Upload->getError());
-            $this->error('上传失败');
+//            $this->error('上传失败');
         }
         $data['pic'] = $info['pic']['url'].'-tinyq30';
         $data['praise'] = 0;
@@ -37,7 +37,7 @@ class DataController extends Controller {
         $info = $Upload->upload();
         if(!$info) {
             var_dump($Upload->getError());
-            $this->error('上传失败');
+//            $this->error('上传失败');
         }
         $data['school_pic'] = $info['pic']['url'].'-tinyq30';
         $data['school_introduce'] = $input['school_introduce'];
