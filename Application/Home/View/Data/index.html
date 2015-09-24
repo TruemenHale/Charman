@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="{:U('Data/getData')}" method="post" enctype="multipart/form-data">
+    <input type="text" name="president" placeholder="姓名">
+    <select name="school_id">
+        <volist name="school" id="v">
+            <option value="{$v.id}">{$v.school_name}</option>
+        </volist>
+    </select>
+    <input type="text" name="introduce" placeholder="主席个人介绍">
+    <input type="text" name="posization" placeholder="职位">
+    <input type="file" name="pic">
+    <input type="submit">
+</form>
+<div>照片最好小于4M, 服务器在海外, 速度不会太快</div>
+</body>
+</html>

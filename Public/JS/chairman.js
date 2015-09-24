@@ -13,9 +13,11 @@ function viewChariman(data){
 			transition:'flow'
 		});
 	});
-	for(var i = 0;i<data.length;i++){
+	for(var i = 0; i<data.length; i++){
+		var pic = data[i].pic;
+		console.log(pic);
 		var _html = '<li>'+
-			'<div class="cPhoto" style="background-image: url("'+data[i].pic+'")">'+
+			'<div class="cPhoto" style="background-image: url(' + pic + ')">'+
 		'</div>'+
 		'<p class="cTitle">'+
 		'<span class="Cname">'+

@@ -21,6 +21,7 @@ $(function(){
 	oBack.on('tap',function(){
 		var list = $('#List');
 		list.html("");
+		$('.perSchool').off('tap');
 		$.mobile.changePage('#index',{
 			transition:'flow'
 		});
@@ -88,24 +89,6 @@ $(function(){
 					});
 					pageView(data.data,uName,school_id,a);
 					page_token = true;
-					$('.perSchool').on('tap',function(){
-						if(chairman_token){
-							chairman_token = false;
-							$.mobile.loading('show');
-							var b = {};
-							b.school_id = school_id;
-							$.post(chairman_path,b,function(data) {
-									chairman_token = true;
-									$.mobile.loading('hide');
-									if (data.status == 200) {
-										viewChariman(data.data);
-									}else{
-										alert(data.info);
-									}
-								}
-							);
-						}
-					});
 				}
 				else{
 					alert(data.info);
