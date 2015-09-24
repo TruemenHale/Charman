@@ -2,6 +2,24 @@
  * Created by truemenhale on 15/9/15.
  */
 function pageView(data,name,school_id,a){
+	$('.perSchool').on('tap',function(){
+		if(chairman_token){
+			chairman_token = false;
+			$.mobile.loading('show');
+			var b = {};
+			b.school_id = school_id;
+			$.post(chairman_path,b,function(data) {
+					chairman_token = true;
+					$.mobile.loading('hide');
+					if (data.status == 200) {
+						viewChariman(data.data);
+					}else{
+						alert(data.info);
+					}
+				}
+			);
+		}
+	});
 	var img = new Image();
 	img.src = data.school_pic;
 	img.onload = function(){
@@ -20,6 +38,9 @@ function pageView(data,name,school_id,a){
 		var _data = {};
 		_data.school_id = school_id;
 		$.post(praise_path,_data,function(data){
+			if(data.status == 200){
+				$('.pray').off('tap');
+			}
 			alert(data.info);
 		});
 	});
