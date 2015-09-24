@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="{:U('Data/getSchool')}" method="post" enctype="multipart/form-data">
+    <select name="school_id">
+        <volist name="school" id="v">
+            <option value="{$v.id}">{$v.school_name}</option>
+        </volist>
+    </select>
+    <input type="text" name="school_introduce" placeholder="学校介绍">
+
+    学校图片:   <input type="file" name="pic">
+    <input type="submit">
+</form>
+<div>照片最好小于4M, 服务器在海外, 速度不会太快</div>
+</body>
+</html>
