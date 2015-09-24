@@ -15,7 +15,7 @@ class DataController extends Controller {
         $Upload = new \Think\Upload($setting);
         $info = $Upload->upload();
         if(!$info) {
-            $Upload->getError();
+            var_dump($Upload->getError());
             $this->error('上传失败');
         }
         $data['pic'] = $info['pic']['url'].'-tinyq30';
