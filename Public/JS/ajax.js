@@ -34,7 +34,15 @@ function pageView(data,name,school_id,a){
 	$('.uName').html(name);
 	$('.Tname').html(tName);
 	$('.prayNum').html(data.school_praise);
-	$('.uDire').html(data.school_introduce);
+	var intro = data.school_introduce;
+	if(intro.length >= 200){
+		$('.uDire').html(intro.substr(0,200)+'...');
+	}else{
+		$('.uDire').html(intro);
+	}
+	$('.forMore').on('tap',function(){
+		$('.uDire').html(intro);
+	});
 	$('.pray').on('tap',function(){
 		var _data = {};
 		_data.school_id = school_id;
