@@ -10,6 +10,7 @@ class ToolController extends Controller {
             $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$_SERVER['QUERY_STRING']);
             $url = $this->__CreateOauthUrlForCode($baseUrl);
             Header("Location: $url");
+            return;
             exit();
         } else {
             //获取code码，以获取openid
