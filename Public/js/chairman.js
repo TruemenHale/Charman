@@ -1,7 +1,6 @@
 /**
  * Created by truemenhale on 15/9/21.
  */
-
 var applyChairman_token = true;
 function viewChariman(data){
 	var list = $('.comment_holder');
