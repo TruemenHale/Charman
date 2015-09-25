@@ -18,6 +18,8 @@ class ToolController extends Controller {
             //获取code码，以获取openid
             $code = $_GET['code'];
             $userInfo = $this->getOpenidFromMp($code);
+            var_dump($userInfo);
+            return;
             return $userInfo;
         }
     }
