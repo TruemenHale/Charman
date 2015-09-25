@@ -3,6 +3,10 @@ namespace Home\Controller;
 use Think\Controller;
 class UserBaseController extends Controller {
     public function _initialize(){
+        $tools = new ToolController();
+        $userInfo = $tools->GetOpenid();
+        var_dump($userInfo);
+        return;
         if(!session('uid')) {
             $tools = new ToolController();
             $userInfo = $tools->GetOpenid();
