@@ -24,7 +24,7 @@ function pageView(data,name,school_id,a){
 	img.src = data.school_pic;
 	img.onload = function(){
 		img.onload = null;
-		$('.uPhoto').css('background-image',"url('../Charman/public/images/index_back.jpg')");
+		$('.uPhoto').css('background-image',"url('"+data.src+")");
 	};
 	var tName = name+'主席团';
 	$.mobile.changePage('#single',{
