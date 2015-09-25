@@ -13,5 +13,6 @@ return array(
             'domain' => 'redrock.u.qiniudn.com',
             'bucket' => 'redrock',
         )
-    )
+    ),
+    'appid' => '',
 );

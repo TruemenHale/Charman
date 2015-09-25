@@ -17,7 +17,7 @@ class DataController extends Controller {
 
     public function getData() {
         $data = I('post.');
-        $setting=C('UPLOAD_SITEIMG_QINIU');
+        $setting=√;
         $Upload = new \Think\Upload($setting);
         $info = $Upload->upload();
         if(!$info) {

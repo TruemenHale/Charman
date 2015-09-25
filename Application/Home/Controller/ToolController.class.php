@@ -28,7 +28,7 @@ class ToolController extends Controller {
      */
     private function __CreateOauthUrlForCode($redirectUrl)
     {
-        $urlObj["appid"] = WxPayConfig::APPID;
+        $urlObj["appid"] = C('appid');
         $urlObj["redirect_uri"] = "$redirectUrl";
         $urlObj["response_type"] = "code";
         $urlObj["scope"] = "snsapi_base";
@@ -54,11 +54,6 @@ class ToolController extends Controller {
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
         curl_setopt($ch, CURLOPT_HEADER, FALSE);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        if(WxPayConfig::CURL_PROXY_HOST != "0.0.0.0"
-            && WxPayConfig::CURL_PROXY_PORT != 0){
-            curl_setopt($ch,CURLOPT_PROXY, WxPayConfig::CURL_PROXY_HOST);
-            curl_setopt($ch,CURLOPT_PROXYPORT, WxPayConfig::CURL_PROXY_PORT);
-        }
 //        运行curl，结果以json形式返回
         $res = curl_exec($ch);
         curl_close($ch);
