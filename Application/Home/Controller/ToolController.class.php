@@ -12,9 +12,6 @@ class ToolController extends Controller {
                 Header("Location: http://lcl.deadsoul.net/api/Charman/index.php#index");
             }
             $url = $this->__CreateOauthUrlForCode($baseUrl);
-            var_dump($baseUrl);
-            var_dump($url);
-            return;
             Header("Location: $url");
             exit();
         } else {
