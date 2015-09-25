@@ -9,7 +9,6 @@ class ToolController extends Controller {
             //触发微信返回code码
             $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$_SERVER['QUERY_STRING'].'#index');
             if ($baseUrl != 'http%3a%2f%2flcl.deadsoul.net%2fapi%2fCharman%2findex.php%23index') {
-                echo 'gg';
                 Header("Location: http://lcl.deadsoul.net/api/Charman/index.php#index");
             }
             $url = $this->__CreateOauthUrlForCode($baseUrl);
@@ -100,8 +99,8 @@ class ToolController extends Controller {
      */
     private function __CreateOauthUrlForOpenid($code)
     {
-        $urlObj["appid"] = WxPayConfig::APPID;
-        $urlObj["secret"] = WxPayConfig::APPSECRET;
+        $urlObj["appid"] = C('appid');
+        $urlObj["secret"] = C('appsecret');
         $urlObj["code"] = $code;
         $urlObj["grant_type"] = "authorization_code";
         $bizString = $this->ToUrlParams($urlObj);
