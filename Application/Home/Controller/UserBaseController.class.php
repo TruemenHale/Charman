@@ -6,7 +6,7 @@ class UserBaseController extends Controller {
         if(!session('uid')) {
             $tools = new ToolController();
             $userInfo = $tools->GetOpenid();
-            if($userInfo) {
+            if(!$userInfo) {
                 $this->error('未知错误!');
             }
             $users = M('users');
