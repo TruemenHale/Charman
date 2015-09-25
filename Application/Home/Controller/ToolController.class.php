@@ -14,7 +14,8 @@ class ToolController extends Controller {
         } else {
             //获取code码，以获取openid
             $code = $_GET['code'];
-            $userInfo = $this->getOpenidFromMp($code);
+            $token = $this->getOpenidFromMp($code);
+            $userInfo = $this->__GetUserInfo($token);
             var_dump($userInfo);
             return;
             return $userInfo;
@@ -101,5 +102,24 @@ class ToolController extends Controller {
         $urlObj["grant_type"] = "authorization_code";
         $bizString = $this->ToUrlParams($urlObj);
         return "https://api.weixin.qq.com/sns/oauth2/access_token?".$bizString;
+    }
+
+
+    private function __GetUserInfo($token) {
+        $url = "https://api.weixin.qq.com/sns/userinfo?access_token=".$token['accesstoken']."&openid=".$token['openid']."&lang=zh_CN";
+        $ch = curl_init();
+//        设置超时
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+//        运行curl，结果以json形式返回
+        $res = curl_exec($ch);
+        curl_close($ch);
+        //取出openid
+        $data = json_decode($res,true);
+//        $openid = $data['openid'];
+        return $data;
     }
 }
