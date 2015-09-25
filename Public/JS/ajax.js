@@ -24,8 +24,8 @@ function pageView(data,name,school_id,a){
 	img.src = data.school_pic;
 	img.onload = function(){
 		img.onload = null;
-		console.log(data.school_pic);
-		$('.uPhoto').css('background-image',"url('"+data.school_pic+")");
+		var pic = data.school_pic;
+		$('.uPhoto').css('background-image',pic);
 	};
 	var tName = name+'主席团';
 	$.mobile.changePage('#single',{
