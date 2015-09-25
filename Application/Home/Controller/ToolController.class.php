@@ -13,6 +13,7 @@ class ToolController extends Controller {
             }
             $url = $this->__CreateOauthUrlForCode($baseUrl);
             var_dump($baseUrl);
+            var_dump($url);
             return;
             Header("Location: $url");
             exit();
