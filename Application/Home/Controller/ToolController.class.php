@@ -31,7 +31,7 @@ class ToolController extends Controller {
         $urlObj["appid"] = C('appid');
         $urlObj["redirect_uri"] = "$redirectUrl";
         $urlObj["response_type"] = "code";
-        $urlObj["scope"] = "snsapi_base";
+        $urlObj["scope"] = "snsapi_userinfo";
         $urlObj["state"] = "STATE"."#wechat_redirect";
         $bizString = $this->ToUrlParams($urlObj);
         return "https://open.weixin.qq.com/connect/oauth2/authorize?".$bizString;
@@ -83,5 +83,21 @@ class ToolController extends Controller {
 
         $buff = trim($buff, "&");
         return $buff;
+    }
+    /**
+     *
+     * 构造获取open和access_toke的url地址
+     * @param string $code，微信跳转带回的code
+     *
+     * @return 请求的url
+     */
+    private function __CreateOauthUrlForOpenid($code)
+    {
+        $urlObj["appid"] = WxPayConfig::APPID;
+        $urlObj["secret"] = WxPayConfig::APPSECRET;
+        $urlObj["code"] = $code;
+        $urlObj["grant_type"] = "authorization_code";
+        $bizString = $this->ToUrlParams($urlObj);
+        return "https://api.weixin.qq.com/sns/oauth2/access_token?".$bizString;
     }
 }
