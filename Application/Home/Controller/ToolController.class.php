@@ -9,12 +9,17 @@ class ToolController extends Controller {
             //触发微信返回code码
             $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$_SERVER['QUERY_STRING']);
             $url = $this->__CreateOauthUrlForCode($baseUrl);
+            var_dump($url);
             Header("Location: $url");
             exit();
         } else {
             //获取code码，以获取openid
             $code = $_GET['code'];
+            var_dump($code);
+
             $userInfo = $this->getOpenidFromMp($code);
+            var_dump($userInfo);
+            return;
             return $userInfo;
         }
     }
