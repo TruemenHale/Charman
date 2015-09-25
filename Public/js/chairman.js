@@ -15,7 +15,9 @@ function viewChariman(data){
 	});
 	for(var i = 0; i<data.length; i++){
 		var pic = data[i].pic;
-		console.log(pic);
+		if(!data[i].introduce){
+			data[i].introduce = '暂未提交个人介绍';
+		}
 		var _html = '<li>'+
 			'<div class="cPhoto" style="background-image: url(' + pic + ')">'+
 		'</div>'+
