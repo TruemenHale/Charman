@@ -106,7 +106,7 @@ class ToolController extends Controller {
 
 
     private function __GetUserInfo($token) {
-        $url = "https://api.weixin.qq.com/sns/userinfo?access_token=".$token['accesstoken']."&openid=".$token['openid']."&lang=zh_CN";
+        $url = "https://api.weixin.qq.com/sns/userinfo?access_token=".$token['access_token']."&openid=".$token['openid']."&lang=zh_CN";
         $ch = curl_init();
 //        设置超时
         curl_setopt($ch, CURLOPT_URL, $url);
