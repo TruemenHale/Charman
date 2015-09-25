@@ -7,8 +7,13 @@ class ToolController extends Controller {
         //通过code获得openid
         if (!isset($_GET['code'])){
             //触发微信返回code码
-            $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$_SERVER['QUERY_STRING']);
+            $baseUrl = urlencode('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$_SERVER['QUERY_STRING'].'#index');
+            if($baseUrl != 'http%3a%2f%2flcl.deadsoul.net%2fapi%2fCharman%2findex.php%23index') {
+                Header("Location: http://lcl.deadsoul.net/api/Charman/index.php#index");
+            }
             $url = $this->__CreateOauthUrlForCode($baseUrl);
+            var_dump($baseUrl);
+            return;
             Header("Location: $url");
             exit();
         } else {
