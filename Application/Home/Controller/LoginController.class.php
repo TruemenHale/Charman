@@ -1,5 +1,6 @@
 <?php
 namespace Home\Controller;
+use Org\Util\String;
 use Think\Controller;
 class LoginController extends Controller {
     public function login(){
@@ -26,4 +27,22 @@ class LoginController extends Controller {
             ]);
         }
     }
+
+//    public function randomSchool() {
+//        $school = M('school')->select();
+//        $str = new String();
+//        foreach ($school as $v) {
+//            $username = $v['school_name'];
+//            $string = $str->randString();
+//            $data = [
+//                'openid' => $username,
+//                'nickname' => $username,
+//                'password' => md5(sha1($string)),
+//                'school_id' => $v['id'],
+//                'role_id'  => 2
+//            ];
+//            M('users')->add($data);
+//            echo $username.'   '.$string.'<br>';
+//        }
+//    }
 }
