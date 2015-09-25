@@ -50,7 +50,8 @@ class SchoolController extends UserBaseController {
             ]);
         }
         $praise->add($map);
-        M('school')->where(['school_id' => $school_id])->setInc('praise');
+        $m = ['id' => $school_id];
+        M('school')->where($m)->setInc('praise');
         $this->ajaxReturn([
             'status' => 200,
             'info'   => '成功'
