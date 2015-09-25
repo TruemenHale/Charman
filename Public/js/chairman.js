@@ -55,7 +55,7 @@ function viewChariman(data){
 		for(var j = 0;j < data[i].comment.length;j++){
 			var html_ =
 				'<li>'+
-				'<div class="comment_a" style="background-image: url("'+data[i].comment[j].avatar+'")">'+
+				'<div class="comment_a" style="background-image: url('+data[i].comment[j].avatar+')">'+
 
 				'</div>'+
 				'<div class="usrBack">'+

@@ -101,7 +101,7 @@ function commentView(data){
 		for(var i = 0;i < data.length;i++){
 			var _html =
 				'<li>'+
-				'<div class="touxiang" '+'style = "background-image: '+'url("'+data[i].avatar+'")">'+
+				'<div class="touxiang" '+'style = "background-image: '+'url('+data[i].avatar+')">'+
 				'</div>'+
 				'<div class="usrBack">'+
 				'<p class="usrName">'+data[i].nickname+'</p>'+
