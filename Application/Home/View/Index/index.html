@@ -72,7 +72,7 @@
 			<li>
 				<i class="iconfont" style="font-size: 16px;margin-left: 3px;display: inline-block">&#xe625;</i>
 				账号
-				<input type="text" id="usrName" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" placeholder="请输入您的账号" data-role="none"/>
+				<input type="text" id="usrName" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\u4E00-\u9FA5]/g,''))"  placeholder="请输入您的账号" data-role="none"/>
 			</li>
 			<li>
 				<i class="iconfont" style="font-size: 20px;">&#xe61b;</i>

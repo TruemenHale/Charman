@@ -54,6 +54,8 @@ function pageView(data,name,school_id,a){
 		$.post(praise_path,_data,function(data){
 			if(data.status == 200){
 				$('.pray').off('tap');
+				var c = parseInt($('.prayNum').html())+1;
+				$('.prayNum').html(c);
 			}
 			alert(data.info);
 		});
