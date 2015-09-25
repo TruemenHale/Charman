@@ -16,8 +16,6 @@ class ToolController extends Controller {
             $code = $_GET['code'];
             $token = $this->getOpenidFromMp($code);
             $userInfo = $this->__GetUserInfo($token);
-            var_dump($userInfo);
-            return;
             return $userInfo;
         }
     }
