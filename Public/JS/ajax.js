@@ -35,10 +35,15 @@ function pageView(data,name,school_id,a){
 	$('.Tname').html(tName);
 	$('.prayNum').html(data.school_praise);
 	var intro = data.school_introduce;
-	if(intro.length >= 200){
-		$('.uDire').html(intro.substr(0,200)+'...');
-	}else{
-		$('.uDire').html(intro);
+	if(intro){
+		if(intro.length >= 500){
+			$('.uDire').html(intro.substr(0,500)+'...');
+		}else{
+			$('.uDire').html(intro);
+		}
+	}
+	else{
+		$('.uDire').html("暂无介绍。");
 	}
 	$('.forMore').on('tap',function(){
 		$('.uDire').html(intro);
