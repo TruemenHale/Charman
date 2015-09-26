@@ -1,8 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-//todo UserBaseController
-class SchoolController extends Controller {
+class SchoolController extends UserBaseController {
     public function index(){
         $this->display();
     }
