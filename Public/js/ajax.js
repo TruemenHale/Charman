@@ -36,18 +36,11 @@ function pageView(data,name,school_id,a){
 	$('.prayNum').html(data.school_praise);
 	var intro = data.school_introduce;
 	if(intro){
-		if(intro.length >= 500){
-			$('.uDire').html(intro.substr(0,500)+'...');
-		}else{
 			$('.uDire').html(intro);
-		}
 	}
 	else{
 		$('.uDire').html("暂无介绍。");
 	}
-	$('.forMore').on('tap',function(){
-		$('.uDire').html(intro);
-	});
 	$('.pray').on('tap',function(){
 		var _data = {};
 		_data.school_id = school_id;
