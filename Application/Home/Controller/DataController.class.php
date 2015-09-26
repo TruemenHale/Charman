@@ -4,13 +4,13 @@ use Think\Controller;
 class DataController extends Controller {
 
     public function index() {
-        $school = M('school')->select();
+        $school = M('school')->where(['status' => 1])->select();
         $this->assign('school', $school);
         $this->display();
     }
 
     public function school() {
-        $school = M('school')->select();
+        $school = M('school')->where(['status' => 1])->select();
         $this->assign('school', $school);
         $this->display();
     }
