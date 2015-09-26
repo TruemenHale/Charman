@@ -119,7 +119,7 @@ function viewChariman(data){
 		$.post(praise_chairman,_data,function(data){
 			alert(data.info);
 			if(data.status == 200){
-				var num = _this.find('.praiseNum').val()+1;
+				var num = parseInt(_this.find('.praiseNum').val())+1;
 				_this.find('.praiseNum').val(num);
 			}
 		});
