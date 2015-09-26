@@ -27,7 +27,7 @@ function pageView(data,name,school_id,a){
 		var pic = data.school_pic;
 		$(".uPhoto").css("background-image","url("+pic+")");
 	};
-	var tName = name+'主席团';
+	var tName = name+'学生会主席团';
 	$.mobile.changePage('#single',{
 		transition:"turn"
 	});

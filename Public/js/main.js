@@ -80,6 +80,7 @@ $(function(){
 			$.mobile.loading('show');
 			$.post(school_path,_data,function(data){
 				$.mobile.loading('hide');
+				page_token = true;
 				if(data.status == 200){
 					var a = {};
 					a.page = 1;
@@ -88,11 +89,9 @@ $(function(){
 						commentView(data.data);
 					});
 					pageView(data.data,uName,school_id,a);
-					page_token = true;
 				}
 				else{
 					alert(data.info);
-					page_token = true;
 				}
 			});
 		});

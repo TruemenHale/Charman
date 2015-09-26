@@ -2,6 +2,13 @@
  * Created by truemenhale on 15/9/21.
  */
 var applyChairman_token = true;
+$(document).on("pagebeforehide","#charman",function(){
+	$('.comment_holder').html(" ");
+});
+$(document).on("pagebeforeshow","#index",function(event){
+	$('#List').html(" ");
+	$('.perSchool').off('tap');
+});
 function viewChariman(data){
 	var list = $('.comment_holder');
 	var arr_ = [];
@@ -27,7 +34,7 @@ function viewChariman(data){
 			'</span>&nbsp;'+
 	'<span class="position">'+data[i].posization+'</span>'+
 		'<span class="praise" id-praise="'+data[i].president_id+'">'+
-		'<i style="font-family: iconfont;color: #ff5148;font-size: 16px;margin-right: 5px">&#xe6d1;</i>赏赞'+ '<span class="praiseNum">'+data[i].praise+'</span>'+
+		'<i style="font-family: iconfont;color: #ff5148;font-size: 16px;margin-right: 5px">&#xe6d1;</i>赏赞'+ '<span class="praiseNum" data-num="'+i+'">'+data[i].praise+'</span>'+
 		'</span>'+
 		'</p>'+
 		'<div class="cIntro">'+
@@ -119,8 +126,8 @@ function viewChariman(data){
 		$.post(praise_chairman,_data,function(data){
 			alert(data.info);
 			if(data.status == 200){
-				var num = parseInt(_this.find('.praiseNum').val())+1;
-				_this.find('.praiseNum').val(num);
+				var num = parseInt(_this.find('.praiseNum').html())+1;
+				_this.find('.praiseNum').html(num);
 			}
 		});
 	});
