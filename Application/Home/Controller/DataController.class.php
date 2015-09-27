@@ -24,7 +24,12 @@ class DataController extends Controller {
             var_dump($Upload->getError());
 //            $this->error('上传失败');
         }
-        $data['pic'] = $info['pic']['url'].'-tinyq30';
+        if($info['pic']['url']) {
+            $data['pic'] = $info['pic']['url'].'-tinyq30';
+        } else {
+            $data['pic'] = '';
+        }
+
         $data['praise'] = 0;
         M('president')->add($data);
         $this->success('ok');
@@ -39,7 +44,12 @@ class DataController extends Controller {
             var_dump($Upload->getError());
 //            $this->error('上传失败');
         }
-        $data['school_pic'] = $info['pic']['url'].'?imageView2/0/w/1400';
+        if($info['pic']['url']) {
+            $data['school_pic'] = $info['pic']['url'].'?imageView2/0/w/1400';
+        } else {
+            $data['school_pic'] = '';
+        }
+
         $data['school_introduce'] = $input['school_introduce'];
         $data['praise'] = 0;
         M('school')->where(['id' => $input['school_id']])->save($data);

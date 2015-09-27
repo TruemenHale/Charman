@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends Controller {
+class IndexController extends UserBaseController {
     public function index(){
         $data = M('school')->where(['status' => 1])->field('id as school_id, school_name, praise')->select();
         $this->assign('data', $data);
