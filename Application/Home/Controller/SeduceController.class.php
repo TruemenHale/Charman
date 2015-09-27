@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class SeduceController extends UserBaseController {
+class SeduceController extends Controller {
 
     //勾搭首页
     public function index() {
