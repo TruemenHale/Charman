@@ -20,13 +20,21 @@ function pageView(data,name,school_id,a){
 			);
 		}
 	});
-	var img = new Image();
-	img.src = data.school_pic;
-	img.onload = function(){
-		img.onload = null;
-		var pic = data.school_pic;
-		$(".uPhoto").css("background-image","url("+pic+")");
-	};
+	if(data.school_pic){
+		$.mobile.loading('show');
+		var img = new Image();
+		img.src = data.school_pic;
+		img.onload = function(){
+			img.onload = null;
+			var pic = data.school_pic;
+			$(".uPhoto").css("background-image","url("+pic+")");
+			$.mobile.loading('hide');
+			pic = null;
+		}
+
+	}else{
+		$(".uPhoto").css("background-image","");
+	}
 	var tName = name+'学生会主席团';
 	$.mobile.changePage('#single',{
 		transition:"turn"
