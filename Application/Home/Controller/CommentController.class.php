@@ -16,7 +16,7 @@ class CommentController extends UserBaseController {
         $data = M('comment')->where(['father_id' => 0, 'comment.school_id' => $input['school_id'], 'status' => 1])
                             ->page($page, 4)
                             ->join('join users on comment.user_id = users.id')
-                            ->order('comment.time desc')
+                            ->order('comment.id desc')
                             ->field('users.nickname, users.avatar, comment.id as comment_id, comment.content, time')
                             ->select();
         foreach ($data as &$v) {
