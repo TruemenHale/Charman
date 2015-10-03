@@ -14,18 +14,19 @@ class UserBaseController extends Controller {
             if($users->where(['openid' => $userInfo['openid']])->count()) {
                 $uid = $users->where(['openid' => $userInfo['openid']])->getField('id');
                 session('uid', $uid);
+            } else {
+                $data = [
+                    'openid' => $userInfo['openid'],
+                    'nickname' => $userInfo['nickname'],
+                    'avatar' => $userInfo['headimgurl'],//todo
+                    'role_id' => 1,
+                    'password' => ''
+                ];
+                $users->add($data);
+                $uid = $users->where(['openid' => $userInfo['openid']])->getField('id');
+                session('uid', $uid);
+                session('uid', $uid);
             }
-// else {
-//                $data = [
-//                    'openid' => $userInfo['openid'],
-//                    'nickname' => $userInfo['nickname'],
-//                    'avatar' => $userInfo['headimgurl'],//todo
-//                    'role_id' => 1,
-//                    'password' => ''
-//                ];
-//                $uid = $users->add($data);
-//                session('uid', $uid);
-//            }
 //        }
     }
 }
