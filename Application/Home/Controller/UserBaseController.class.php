@@ -3,11 +3,11 @@ namespace Home\Controller;
 use Think\Controller;
 class UserBaseController extends Controller {
     public function _initialize(){
-//        $session_uid = session('uid');
-//        if($session_uid == null || $session_uid == '') {
+        $session_uid = session('uid');
+        if($session_uid == null || $session_uid == '') {
             $tools = new ToolController();
             $userInfo = $tools->GetOpenid();
-            if(!$userInfo) {
+            if($userInfo['openid'] == null || $userInfo['openid'] == '') {
                 $this->error('未知错误!');
             }
             $users = M('users');
@@ -26,6 +26,6 @@ class UserBaseController extends Controller {
                 $uid = $users->where(['openid' => $userInfo['openid']])->getField('id');
                 session('uid', $uid);
             }
-//        }
+        }
     }
 }
