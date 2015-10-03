@@ -48,6 +48,12 @@ class CommentController extends UserBaseController {
                 'info'   => '参数错误!'
             ]);
         }
+        if(!session('uid')) {
+            $this->ajaxReturn([
+                'status' => 403,
+                'info'   => '登录已过期, 请重新进入!'
+            ]);
+        }
         M('comment')->add($result);
         $this->ajaxReturn([
             'status' => 200,
