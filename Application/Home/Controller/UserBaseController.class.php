@@ -3,8 +3,8 @@ namespace Home\Controller;
 use Think\Controller;
 class UserBaseController extends Controller {
     public function _initialize(){
-        $session_uid = session('uid');
-        if($session_uid == null || $session_uid == '') {
+//        $session_uid = session('uid');
+//        if($session_uid == null || $session_uid == '') {
             $tools = new ToolController();
             $userInfo = $tools->GetOpenid();
             if(!$userInfo) {
@@ -14,17 +14,18 @@ class UserBaseController extends Controller {
             if($users->where(['openid' => $userInfo['openid']])->count()) {
                 $uid = $users->where(['openid' => $userInfo['openid']])->getField('id');
                 session('uid', $uid);
-            } else {
-                $data = [
-                    'openid' => $userInfo['openid'],
-                    'nickname' => $userInfo['nickname'],
-                    'avatar' => $userInfo['headimgurl'],//todo
-                    'role_id' => 1,
-                    'password' => ''
-                ];
-                $uid = $users->add($data);
-                session('uid', $uid);
             }
-        }
+// else {
+//                $data = [
+//                    'openid' => $userInfo['openid'],
+//                    'nickname' => $userInfo['nickname'],
+//                    'avatar' => $userInfo['headimgurl'],//todo
+//                    'role_id' => 1,
+//                    'password' => ''
+//                ];
+//                $uid = $users->add($data);
+//                session('uid', $uid);
+//            }
+//        }
     }
 }
