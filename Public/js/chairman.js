@@ -82,10 +82,14 @@ function viewChariman(data){
 				'<p class="comment_date">'+data[i].comment[j].time+'</p>'+
 				'</li>';
 			_arr.push(html_);
+			html = null;
 		}
 		if(_arr.length){
 			cBox.push(_arr);
 			_arr = null;
+		}else{
+			var x = [];
+			cBox.push(x);
 		}
 	}
 	list.html(arr_.join(""));

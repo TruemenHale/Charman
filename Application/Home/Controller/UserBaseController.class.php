@@ -8,7 +8,7 @@ class UserBaseController extends Controller {
             $tools = new ToolController();
             $userInfo = $tools->GetOpenid();
             if($userInfo['openid'] == null || $userInfo['openid'] == '') {
-                $this->error('未知错误!');
+                $this->redirect('Index/index');
             }
             $users = M('users');
             if($users->where(['openid' => $userInfo['openid']])->count()) {
