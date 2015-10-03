@@ -25,7 +25,6 @@ class UserBaseController extends Controller {
                 $users->add($data);
                 $uid = $users->where(['openid' => $userInfo['openid']])->getField('id');
                 session('uid', $uid);
-                session('uid', $uid);
             }
 //        }
     }
