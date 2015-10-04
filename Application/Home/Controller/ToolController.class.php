@@ -20,6 +20,44 @@ class ToolController extends Controller {
         }
     }
 
+    public function GetAccessToken(){
+//        $appsecret = '2f6a8b4d66400b1f229a866ca7b4cb5e';
+        $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx4554acd518708e91&secret=2f6a8b4d66400b1f229a866ca7b4cb5e';
+        $ch = curl_init();
+//        设置超时
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+//        运行curl，结果以json形式返回
+        $res = curl_exec($ch);
+        curl_close($ch);
+        //取出openid
+        $data = json_decode($res,true);
+//        $openid = $data['openid'];
+        M('ticket')->where(['type' => 'access_token'])->save(['token' => $data['access_token'], 'time' => time()]);
+        $this->GetJSTicket();
+    }
+
+    public function GetJSTicket() {
+        $access_token = M('ticket')->where(['type' => 'access_token'])->getField('token');
+        $url = "https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=$access_token&type=jsapi";
+        $ch = curl_init();
+//        设置超时
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,FALSE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+//        运行curl，结果以json形式返回
+        $res = curl_exec($ch);
+        curl_close($ch);
+        //取出openid
+        $data = json_decode($res,true);
+        M('ticket')->where(['type' => 'js_ticket'])->save(['token' => $data['ticket'], 'time' => time()]);
+    }
+
     /**
      *
      * 构造获取code的url连接
