@@ -28,10 +28,10 @@ $(function(){
 	});
 	$.mobile.loading('show');
 	var img = new Image();
-	img.src = "Public/images/index_back.jpg";
+	img.src = "/api/Charman/Public/images/index_back.jpg";
 	img.onload = function(){
 		img.onload = null;
-		$('#index').css('background-image',"url('Public/images/index_back.jpg')");
+		$('#index').css('background-image',"url('/api/Charman/Public/images/index_back.jpg')");
 		$.mobile.loading('hide');
 		$.mobile.changePage('#index');
 	};
