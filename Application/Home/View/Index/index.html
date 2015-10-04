@@ -152,6 +152,9 @@
 			<p class="chairman_title">主席团</p>
 		</ul>
 	</div>
+	<div style="display: none">
+		{:var_dump($ticket)}
+	</div>
 	<script>
 		var shareURL = 'http://lcl.deadsoul.net/api/Charman';
 		var shareImg = 'http://lcl.deadsoul.net/api/Charman/Public/images/index_back.jpg';
@@ -161,7 +164,7 @@
 		appId: 'wx4554acd518708e91', // 必填，公众号的唯一标识
 		timestamp: <?php echo $time = time() ?>, // 必填，生成签名的时间戳
 		nonceStr: 'asdf', // 必填，生成签名的随机串
-		signature: "<?php echo sha1('jsapi_ticket='.$ticket.'&noncestr=asdf&timestamp='.$time.'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].$_SERVER['QUERY_STRING']); ?>",// 必填，签名，见附录1
+		signature: "<?php echo sha1('jsapi_ticket='.$ticket.'&noncestr=asdf&timestamp='.$time.'http://lcl.deadsoul.net/api/Charman'; ?>",// 必填，签名，见附录1
 		jsApiList: [
 		'onMenuShareTimeline',
 		'onMenuShareAppMessage',
