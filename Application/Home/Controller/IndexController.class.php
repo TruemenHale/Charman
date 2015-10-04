@@ -1,10 +1,11 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends UserBaseController {
+class IndexController extends Controller {
     public function index(){
         $ticket =  M('ticket')->where(['type' => 'js_ticket'])->find();
         $expire = time() - $ticket['time'];
+        $url = __SELF__;
         if($expire >= 7200) {
             $tool = new ToolController();
             $tool->GetAccessToken();
@@ -13,6 +14,7 @@ class IndexController extends UserBaseController {
         $this->assign('ticket', $ticket['token']);
         $data = M('school')->where(['status' => 1])->field('id as school_id, school_name, praise')->select();
         $this->assign('data', $data);
+        $this->assign('url', $url);
         $this->display();
     }
 //    public function editdata(){

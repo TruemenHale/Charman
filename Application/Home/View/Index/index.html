@@ -153,7 +153,7 @@
 		</ul>
 	</div>
 	<script>
-		var shareURL = 'http://lcl.deadsoul.net__SELF__';
+		var shareURL = "http://lcl.deadsoul.net__SELF__";
 		var shareImg = 'http://lcl.deadsoul.net/api/Charman/Public/images/index_back.jpg';
 		//wx
 		wx.config({
@@ -161,7 +161,7 @@
 		appId: 'wx4554acd518708e91', // 必填，公众号的唯一标识
 		timestamp: <?php echo $time = time() ?>, // 必填，生成签名的时间戳
 		nonceStr: 'asdf', // 必填，生成签名的随机串
-		signature: "<?php echo sha1('jsapi_ticket='.$ticket.'&noncestr=asdf&timestamp='.$time.'&url=http://lcl.deadsoul.net'.__SELF__); ?>",// 必填，签名，见附录1
+		signature: "<?php echo sha1('jsapi_ticket='.$ticket.'&noncestr=asdf&timestamp='.$time.'&url=http://lcl.deadsoul.net'.$url); ?>",// 必填，签名，见附录1
 		jsApiList: [
 		'onMenuShareTimeline',
 		'onMenuShareAppMessage',
