@@ -28,4 +28,8 @@ class UserBaseController extends Controller {
             }
         }
     }
+
+    public function _empty() {
+        $this->redirect('Index/index');
+    }
 }
