@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class CommentController extends UserBaseController {
+class CommentController extends Controller {
 
     //获取评论
     public function getComment() {

@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends UserBaseController {
+class IndexController extends Controller {
     public function index(){
         $ticket =  M('ticket')->where(['type' => 'js_ticket'])->find();
         $expire = time() - $ticket['time'];
