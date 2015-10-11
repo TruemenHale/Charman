@@ -32,7 +32,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 #index {
-  background: url("http://lcl.deadsoul.net/api/Charman/Public/images/index_back.jpg");
+  background: url("../images/index_back.jpg");
   background-size: 100% 100%;
   -webkit-background-size: 100% 100%;
   -o-background-size: 100% 100%;
@@ -285,7 +285,7 @@
   width: 100%;
   background: #f4973c;
   height: auto;
-  min-height: 400px;
+  min-height: 800px;
   top: 225px;
 }
 #single .wordsBoard .wordsList .perSchool {
@@ -431,7 +431,7 @@
   width: 100%;
 }
 #charman .comment_holder > li {
-  margin-bottom: 50px;
+  margin-bottom: 350px;
 }
 #charman #charmanHeader {
   background: #0083a9;
@@ -544,7 +544,7 @@
   width: 100%;
   background: #f4973c;
   height: auto;
-  min-height: 250px;
+  min-height: 450px;
   top: 225px;
   padding-bottom: 30px;
 }
