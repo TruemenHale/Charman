@@ -7,6 +7,7 @@ $(document).on("pagebeforehide","#charman",function(){
 });
 $(document).on("pagebeforeshow","#index",function(event){
 	$('#List').html(" ");
+	$('.loadMore').off('tap');
 	$('.perSchool').off('tap');
 });
 function viewChariman(data){

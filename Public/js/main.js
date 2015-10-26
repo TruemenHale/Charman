@@ -6,7 +6,6 @@ var comment_token = true;
 var chairman_token = true;
 $("document").on("pageshow","#charman",function(){
 	var aUl = $('.comment_ul');
-	console.log(1);
 	for(var i = 0 ; i < aUl.length;i++){
 		aUl.eq(i).listview('refresh');
 	}
@@ -21,7 +20,7 @@ $(function(){
 	oBack.on('tap',function(){
 		var list = $('#List');
 		list.html("");
-		$('.perSchool').off('tap');
+		$('.perSchool').off('tap')
 		$.mobile.changePage('#index',{
 			transition:'flow'
 		});
