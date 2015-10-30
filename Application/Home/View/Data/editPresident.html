@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="{:U('Data/president')}" method="post" enctype="multipart/form-data">
+    <div>
+        <select name="id" >
+            <volist name="president" id="vo">
+                <option value="{$vo.id}">{$vo.school_name} {$vo.president}</option>
+            </volist>
+        </select>
+    </div>
+    <div>
+        <input type="file" name="pic">
+    </div>
+    <div>
+        <input type="submit" value="提交">
+    </div>
+</form>
+
+<div>
+    <br/>
+
+    上面是改照片
+    ----------------------------
+    下面是删主席
+
+    <br/>
+    <br/>
+
+</div>
+
+<div>
+    <form action="{:U('Data/delpresident')}" method="post">
+        <div>
+            <select name="id" >
+                <volist name="president" id="vo">
+                    <option value="{$vo.id}">{$vo.school_name} {$vo.president}</option>
+                </volist>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</div>
+</body>
+</html>

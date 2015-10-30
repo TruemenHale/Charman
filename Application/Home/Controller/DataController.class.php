@@ -15,6 +15,38 @@ class DataController extends Controller {
         $this->display();
     }
 
+    public function editPresident() {
+        $president = M('president')->join('join school on president.school_id = school.id')->field('president, president.id, school_name')->select();
+        $this->assign('president', $president);
+        $this->display();
+    }
+
+    public function delpresident() {
+        $data = I('post.');
+        M('president')->where(['id' => $data['id']])->delete();
+        $this->success('ok');
+    }
+
+    public function president() {
+        $data = I('post.');
+        $setting=C('UPLOAD_SITEIMG_QINIU');
+        $Upload = new \Think\Upload($setting);
+        $info = $Upload->upload();
+        if(!$info) {
+            var_dump($Upload->getError());
+//            $this->error('上传失败');
+        }
+        if($info['pic']['url']) {
+            $data['pic'] = $info['pic']['url'].'-tinyq30';
+        } else {
+            $data['pic'] = '';
+        }
+
+        $data['praise'] = 0;
+        M('president')->where(['id' => $data['id']])->save($data);
+        $this->success('ok');
+    }
+
     public function getData() {
         $data = I('post.');
         $setting=C('UPLOAD_SITEIMG_QINIU');
