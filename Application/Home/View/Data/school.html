@@ -17,5 +17,14 @@
     <input type="submit">
 </form>
 <div>照片最好小于4M, 服务器在海外, 速度不会太快</div>
+
+</br>
+<div>
+    <div>名字 点赞 评论</div></br>
+    <volist name="schooldata" id="vo">
+        <div>{$vo.school_name} {$vo.praise} {$vo.comment}</div></br>
+    </volist>
+</div>
+
 </body>
 </html>
