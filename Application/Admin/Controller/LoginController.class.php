@@ -24,5 +24,10 @@ class LoginController extends Controller {
         }
     }
 
+    public function logout () {
+        session('login_status', null);
+        session('login_user', null);
+    }
+
 
 }
