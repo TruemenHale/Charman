@@ -77,7 +77,7 @@ class PresidentController extends Controller {
             }
 
             M('president')->where("id = '$id'")->save($data);
-            $this->success('添加成功！');
+            $this->success('修改成功！');
         } else {
             $info = M('president')->where("id = '$id'")->find();
             if ($info) {
