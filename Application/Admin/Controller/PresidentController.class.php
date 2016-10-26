@@ -38,10 +38,6 @@ class PresidentController extends Controller {
             $setting=C('UPLOAD_SITEIMG_QINIU');
             $Upload = new \Think\Upload($setting);
             $info = $Upload->upload();
-            if(!$info) {
-                var_dump($Upload->getError());
-//            $this->error('上传失败');
-            }
             if($info['pic']['url']) {
                 $data['pic'] = $info['pic']['url'].'-tinyq30';
             } else {
