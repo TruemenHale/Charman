@@ -43,7 +43,7 @@ class PresidentController extends Controller {
             } else {
                 $data['pic'] = '';
             }
-
+            $data ['praise'] = 0;
             M('president')->add($data);
             $this->success('添加成功！');
 
@@ -93,6 +93,12 @@ class PresidentController extends Controller {
     public function delete ($id) {
         M('president')->where("id = '$id'")->delete();
         $this->success("删除成功！");
+    }
+
+    public function test () {
+        M('president')->where("id > 351")->save([
+            'praise' => 0
+        ]);
     }
 
 }
